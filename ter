@@ -1,0 +1,1874 @@
+[1mdiff --git a/.gitattributes b/.gitattributes[m
+[1mnew file mode 100644[m
+[1mindex 0000000..3b41682[m
+[1m--- /dev/null[m
+[1m+++ b/.gitattributes[m
+[36m@@ -0,0 +1,2 @@[m
+[32m+[m[32m/mvnw text eol=lf[m
+[32m+[m[32m*.cmd text eol=crlf[m
+[1mdiff --git a/.gitignore b/.gitignore[m
+[1mnew file mode 100644[m
+[1mindex 0000000..549e00a[m
+[1m--- /dev/null[m
+[1m+++ b/.gitignore[m
+[36m@@ -0,0 +1,33 @@[m
+[32m+[m[32mHELP.md[m
+[32m+[m[32mtarget/[m
+[32m+[m[32m!.mvn/wrapper/maven-wrapper.jar[m
+[32m+[m[32m!**/src/main/**/target/[m
+[32m+[m[32m!**/src/test/**/target/[m
+[32m+[m
+[32m+[m[32m### STS ###[m
+[32m+[m[32m.apt_generated[m
+[32m+[m[32m.classpath[m
+[32m+[m[32m.factorypath[m
+[32m+[m[32m.project[m
+[32m+[m[32m.settings[m
+[32m+[m[32m.springBeans[m
+[32m+[m[32m.sts4-cache[m
+[32m+[m
+[32m+[m[32m### IntelliJ IDEA ###[m
+[32m+[m[32m.idea[m
+[32m+[m[32m*.iws[m
+[32m+[m[32m*.iml[m
+[32m+[m[32m*.ipr[m
+[32m+[m
+[32m+[m[32m### NetBeans ###[m
+[32m+[m[32m/nbproject/private/[m
+[32m+[m[32m/nbbuild/[m
+[32m+[m[32m/dist/[m
+[32m+[m[32m/nbdist/[m
+[32m+[m[32m/.nb-gradle/[m
+[32m+[m[32mbuild/[m
+[32m+[m[32m!**/src/main/**/build/[m
+[32m+[m[32m!**/src/test/**/build/[m
+[32m+[m
+[32m+[m[32m### VS Code ###[m
+[32m+[m[32m.vscode/[m
+[1mdiff --git a/.mvn/wrapper/maven-wrapper.properties b/.mvn/wrapper/maven-wrapper.properties[m
+[1mnew file mode 100644[m
+[1mindex 0000000..d58dfb7[m
+[1m--- /dev/null[m
+[1m+++ b/.mvn/wrapper/maven-wrapper.properties[m
+[36m@@ -0,0 +1,19 @@[m
+[32m+[m[32m# Licensed to the Apache Software Foundation (ASF) under one[m
+[32m+[m[32m# or more contributor license agreements.  See the NOTICE file[m
+[32m+[m[32m# distributed with this work for additional information[m
+[32m+[m[32m# regarding copyright ownership.  The ASF licenses this file[m
+[32m+[m[32m# to you under the Apache License, Version 2.0 (the[m
+[32m+[m[32m# "License"); you may not use this file except in compliance[m
+[32m+[m[32m# with the License.  You may obtain a copy of the License at[m
+[32m+[m[32m#[m
+[32m+[m[32m#   http://www.apache.org/licenses/LICENSE-2.0[m
+[32m+[m[32m#[m
+[32m+[m[32m# Unless required by applicable law or agreed to in writing,[m
+[32m+[m[32m# software distributed under the License is distributed on an[m
+[32m+[m[32m# "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY[m
+[32m+[m[32m# KIND, either express or implied.  See the License for the[m
+[32m+[m[32m# specific language governing permissions and limitations[m
+[32m+[m[32m# under the License.[m
+[32m+[m[32mwrapperVersion=3.3.2[m
+[32m+[m[32mdistributionType=only-script[m
+[32m+[m[32mdistributionUrl=https://repo.maven.apache.org/maven2/org/apache/maven/apache-maven/3.9.9/apache-maven-3.9.9-bin.zip[m
+[1mdiff --git a/README.md b/README.md[m
+[1mdeleted file mode 100644[m
+[1mindex 24a8e66..0000000[m
+[1m--- a/README.md[m
+[1m+++ /dev/null[m
+[36m@@ -1 +0,0 @@[m
+[31m-# Taskly[m
+\ No newline at end of file[m
+[1mdiff --git a/mvnw b/mvnw[m
+[1mnew file mode 100644[m
+[1mindex 0000000..19529dd[m
+[1m--- /dev/null[m
+[1m+++ b/mvnw[m
+[36m@@ -0,0 +1,259 @@[m
+[32m+[m[32m#!/bin/sh[m
+[32m+[m[32m# ----------------------------------------------------------------------------[m
+[32m+[m[32m# Licensed to the Apache Software Foundation (ASF) under one[m
+[32m+[m[32m# or more contributor license agreements.  See the NOTICE file[m
+[32m+[m[32m# distributed with this work for additional information[m
+[32m+[m[32m# regarding copyright ownership.  The ASF licenses this file[m
+[32m+[m[32m# to you under the Apache License, Version 2.0 (the[m
+[32m+[m[32m# "License"); you may not use this file except in compliance[m
+[32m+[m[32m# with the License.  You may obtain a copy of the License at[m
+[32m+[m[32m#[m
+[32m+[m[32m#    http://www.apache.org/licenses/LICENSE-2.0[m
+[32m+[m[32m#[m
+[32m+[m[32m# Unless required by applicable law or agreed to in writing,[m
+[32m+[m[32m# software distributed under the License is distributed on an[m
+[32m+[m[32m# "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY[m
+[32m+[m[32m# KIND, either express or implied.  See the License for the[m
+[32m+[m[32m# specific language governing permissions and limitations[m
+[32m+[m[32m# under the License.[m
+[32m+[m[32m# ----------------------------------------------------------------------------[m
+[32m+[m
+[32m+[m[32m# ----------------------------------------------------------------------------[m
+[32m+[m[32m# Apache Maven Wrapper startup batch script, version 3.3.2[m
+[32m+[m[32m#[m
+[32m+[m[32m# Optional ENV vars[m
+[32m+[m[32m# -----------------[m
+[32m+[m[32m#   JAVA_HOME - location of a JDK home dir, required when download maven via java source[m
+[32m+[m[32m#   MVNW_REPOURL - repo url base for downloading maven distribution[m
+[32m+[m[32m#   MVNW_USERNAME/MVNW_PASSWORD - user and password for downloading maven[m
+[32m+[m[32m#   MVNW_VERBOSE - true: enable verbose log; debug: trace the mvnw script; others: silence the output[m
+[32m+[m[32m# ----------------------------------------------------------------------------[m
+[32m+[m
+[32m+[m[32mset -euf[m
+[32m+[m[32m[ "${MVNW_VERBOSE-}" != debug ] || set -x[m
+[32m+[m
+[32m+[m[32m# OS specific support.[m
+[32m+[m[32mnative_path() { printf %s\\n "$1"; }[m
+[32m+[m[32mcase "$(uname)" in[m
+[32m+[m[32mCYGWIN* | MINGW*)[m
+[32m+[m[32m  [ -z "${JAVA_HOME-}" ] || JAVA_HOME="$(cygpath --unix "$JAVA_HOME")"[m
+[32m+[m[32m  native_path() { cygpath --path --windows "$1"; }[m
+[32m+[m[32m  ;;[m
+[32m+[m[32mesac[m
+[32m+[m
+[32m+[m[32m# set JAVACMD and JAVACCMD[m
+[32m+[m[32mset_java_home() {[m
+[32m+[m[32m  # For Cygwin and MinGW, ensure paths are in Unix format before anything is touched[m
+[32m+[m[32m  if [ -n "${JAVA_HOME-}" ]; then[m
+[32m+[m[32m    if [ -x "$JAVA_HOME/jre/sh/java" ]; then[m
+[32m+[m[32m      # IBM's JDK on AIX uses strange locations for the executables[m
+[32m+[m[32m      JAVACMD="$JAVA_HOME/jre/sh/java"[m
+[32m+[m[32m      JAVACCMD="$JAVA_HOME/jre/sh/javac"[m
+[32m+[m[32m    else[m
+[32m+[m[32m      JAVACMD="$JAVA_HOME/bin/java"[m
+[32m+[m[32m      JAVACCMD="$JAVA_HOME/bin/javac"[m
+[32m+[m
+[32m+[m[32m      if [ ! -x "$JAVACMD" ] || [ ! -x "$JAVACCMD" ]; then[m
+[32m+[m[32m        echo "The JAVA_HOME environment variable is not defined correctly, so mvnw cannot run." >&2[m
+[32m+[m[32m        echo "JAVA_HOME is set to \"$JAVA_HOME\", but \"\$JAVA_HOME/bin/java\" or \"\$JAVA_HOME/bin/javac\" does not exist." >&2[m
+[32m+[m[32m        return 1[m
+[32m+[m[32m      fi[m
+[32m+[m[32m    fi[m
+[32m+[m[32m  else[m
+[32m+[m[32m    JAVACMD="$([m
+[32m+[m[32m      'set' +e[m
+[32m+[m[32m      'unset' -f command 2>/dev/null[m
+[32m+[m[32m      'command' -v java[m
+[32m+[m[32m    )" || :[m
+[32m+[m[32m    JAVACCMD="$([m
+[32m+[m[32m      'set' +e[m
+[32m+[m[32m      'unset' -f command 2>/dev/null[m
+[32m+[m[32m      'command' -v javac[m
+[32m+[m[32m    )" || :[m
+[32m+[m
+[32m+[m[32m    if [ ! -x "${JAVACMD-}" ] || [ ! -x "${JAVACCMD-}" ]; then[m
+[32m+[m[32m      echo "The java/javac command does not exist in PATH nor is JAVA_HOME set, so mvnw cannot run." >&2[m
+[32m+[m[32m      return 1[m
+[32m+[m[32m    fi[m
+[32m+[m[32m  fi[m
+[32m+[m[32m}[m
+[32m+[m
+[32m+[m[32m# hash string like Java String::hashCode[m
+[32m+[m[32mhash_string() {[m
+[32m+[m[32m  str="${1:-}" h=0[m
+[32m+[m[32m  while [ -n "$str" ]; do[m
+[32m+[m[32m    char="${str%"${str#?}"}"[m
+[32m+[m[32m    h=$(((h * 31 + $(LC_CTYPE=C printf %d "'$char")) % 4294967296))[m
+[32m+[m[32m    str="${str#?}"[m
+[32m+[m[32m  done[m
+[32m+[m[32m  printf %x\\n $h[m
+[32m+[m[32m}[m
+[32m+[m
+[32m+[m[32mverbose() { :; }[m
+[32m+[m[32m[ "${MVNW_VERBOSE-}" != true ] || verbose() { printf %s\\n "${1-}"; }[m
+[32m+[m
+[32m+[m[32mdie() {[m
+[32m+[m[32m  printf %s\\n "$1" >&2[m
+[32m+[m[32m  exit 1[m
+[32m+[m[32m}[m
+[32m+[m
+[32m+[m[32mtrim() {[m
+[32m+[m[32m  # MWRAPPER-139:[m
+[32m+[m[32m  #   Trims trailing and leading whitespace, carriage returns, tabs, and linefeeds.[m
+[32m+[m[32m  #   Needed for removing poorly interpreted newline sequences when running in more[m
+[32m+[m[32m  #   exotic environments such as mingw bash on Windows.[m
+[32m+[m[32m  printf "%s" "${1}" | tr -d '[:space:]'[m
+[32m+[m[32m}[m
+[32m+[m
+[32m+[m[32m# parse distributionUrl and optional distributionSha256Sum, requires .mvn/wrapper/maven-wrapper.properties[m
+[32m+[m[32mwhile IFS="=" read -r key value; do[m
+[32m+[m[32m  case "${key-}" in[m
+[32m+[m[32m  distributionUrl) distributionUrl=$(trim "${value-}") ;;[m
+[32m+[m[32m  distributionSha256Sum) distributionSha256Sum=$(trim "${value-}") ;;[m
+[32m+[m[32m  esac[m
+[32m+[m[32mdone <"${0%/*}/.mvn/wrapper/maven-wrapper.properties"[m
+[32m+[m[32m[ -n "${distributionUrl-}" ] || die "cannot read distributionUrl property in ${0%/*}/.mvn/wrapper/maven-wrapper.properties"[m
+[32m+[m
+[32m+[m[32mcase "${distributionUrl##*/}" in[m
+[32m+[m[32mmaven-mvnd-*bin.*)[m
+[32m+[m[32m  MVN_CMD=mvnd.sh _MVNW_REPO_PATTERN=/maven/mvnd/[m
+[32m+[m[32m  case "${PROCESSOR_ARCHITECTURE-}${PROCESSOR_ARCHITEW6432-}:$(uname -a)" in[m
+[32m+[m[32m  *AMD64:CYGWIN* | *AMD64:MINGW*) distributionPlatform=windows-amd64 ;;[m
+[32m+[m[32m  :Darwin*x86_64) distributionPlatform=darwin-amd64 ;;[m
+[32m+[m[32m  :Darwin*arm64) distributionPlatform=darwin-aarch64 ;;[m
+[32m+[m[32m  :Linux*x86_64*) distributionPlatform=linux-amd64 ;;[m
+[32m+[m[32m  *)[m
+[32m+[m[32m    echo "Cannot detect native platform for mvnd on $(uname)-$(uname -m), use pure java version" >&2[m
+[32m+[m[32m    distributionPlatform=linux-amd64[m
+[32m+[m[32m    ;;[m
+[32m+[m[32m  esac[m
+[32m+[m[32m  distributionUrl="${distributionUrl%-bin.*}-$distributionPlatform.zip"[m
+[32m+[m[32m  ;;[m
+[32m+[m[32mmaven-mvnd-*) MVN_CMD=mvnd.sh _MVNW_REPO_PATTERN=/maven/mvnd/ ;;[m
+[32m+[m[32m*) MVN_CMD="mvn${0##*/mvnw}" _MVNW_REPO_PATTERN=/org/apache/maven/ ;;[m
+[32m+[m[32mesac[m
+[32m+[m
+[32m+[m[32m# apply MVNW_REPOURL and calculate MAVEN_HOME[m
+[32m+[m[32m# maven home pattern: ~/.m2/wrapper/dists/{apache-maven-<version>,maven-mvnd-<version>-<platform>}/<hash>[m
+[32m+[m[32m[ -z "${MVNW_REPOURL-}" ] || distributionUrl="$MVNW_REPOURL$_MVNW_REPO_PATTERN${distributionUrl#*"$_MVNW_REPO_PATTERN"}"[m
+[32m+[m[32mdistributionUrlName="${distributionUrl##*/}"[m
+[32m+[m[32mdistributionUrlNameMain="${distributionUrlName%.*}"[m
+[32m+[m[32mdistributionUrlNameMain="${distributionUrlNameMain%-bin}"[m
+[32m+[m[32mMAVEN_USER_HOME="${MAVEN_USER_HOME:-${HOME}/.m2}"[m
+[32m+[m[32mMAVEN_HOME="${MAVEN_USER_HOME}/wrapper/dists/${distributionUrlNameMain-}/$(hash_string "$distributionUrl")"[m
+[32m+[m
+[32m+[m[32mexec_maven() {[m
+[32m+[m[32m  unset MVNW_VERBOSE MVNW_USERNAME MVNW_PASSWORD MVNW_REPOURL || :[m
+[32m+[m[32m  exec "$MAVEN_HOME/bin/$MVN_CMD" "$@" || die "cannot exec $MAVEN_HOME/bin/$MVN_CMD"[m
+[32m+[m[32m}[m
+[32m+[m
+[32m+[m[32mif [ -d "$MAVEN_HOME" ]; then[m
+[32m+[m[32m  verbose "found existing MAVEN_HOME at $MAVEN_HOME"[m
+[32m+[m[32m  exec_maven "$@"[m
+[32m+[m[32mfi[m
+[32m+[m
+[32m+[m[32mcase "${distributionUrl-}" in[m
+[32m+[m[32m*?-bin.zip | *?maven-mvnd-?*-?*.zip) ;;[m
+[32m+[m[32m*) die "distributionUrl is not valid, must match *-bin.zip or maven-mvnd-*.zip, but found '${distributionUrl-}'" ;;[m
+[32m+[m[32mesac[m
+[32m+[m
+[32m+[m[32m# prepare tmp dir[m
+[32m+[m[32mif TMP_DOWNLOAD_DIR="$(mktemp -d)" && [ -d "$TMP_DOWNLOAD_DIR" ]; then[m
+[32m+[m[32m  clean() { rm -rf -- "$TMP_DOWNLOAD_DIR"; }[m
+[32m+[m[32m  trap clean HUP INT TERM EXIT[m
+[32m+[m[32melse[m
+[32m+[m[32m  die "cannot create temp dir"[m
+[32m+[m[32mfi[m
+[32m+[m
+[32m+[m[32mmkdir -p -- "${MAVEN_HOME%/*}"[m
+[32m+[m
+[32m+[m[32m# Download and Install Apache Maven[m
+[32m+[m[32mverbose "Couldn't find MAVEN_HOME, downloading and installing it ..."[m
+[32m+[m[32mverbose "Downloading from: $distributionUrl"[m
+[32m+[m[32mverbose "Downloading to: $TMP_DOWNLOAD_DIR/$distributionUrlName"[m
+[32m+[m
+[32m+[m[32m# select .zip or .tar.gz[m
+[32m+[m[32mif ! command -v unzip >/dev/null; then[m
+[32m+[m[32m  distributionUrl="${distributionUrl%.zip}.tar.gz"[m
+[32m+[m[32m  distributionUrlName="${distributionUrl##*/}"[m
+[32m+[m[32mfi[m
+[32m+[m
+[32m+[m[32m# verbose opt[m
+[32m+[m[32m__MVNW_QUIET_WGET=--quiet __MVNW_QUIET_CURL=--silent __MVNW_QUIET_UNZIP=-q __MVNW_QUIET_TAR=''[m
+[32m+[m[32m[ "${MVNW_VERBOSE-}" != true ] || __MVNW_QUIET_WGET='' __MVNW_QUIET_CURL='' __MVNW_QUIET_UNZIP='' __MVNW_QUIET_TAR=v[m
+[32m+[m
+[32m+[m[32m# normalize http auth[m
+[32m+[m[32mcase "${MVNW_PASSWORD:+has-password}" in[m
+[32m+[m[32m'') MVNW_USERNAME='' MVNW_PASSWORD='' ;;[m
+[32m+[m[32mhas-password) [ -n "${MVNW_USERNAME-}" ] || MVNW_USERNAME='' MVNW_PASSWORD='' ;;[m
+[32m+[m[32mesac[m
+[32m+[m
+[32m+[m[32mif [ -z "${MVNW_USERNAME-}" ] && command -v wget >/dev/null; then[m
+[32m+[m[32m  verbose "Found wget ... using wget"[m
+[32m+[m[32m  wget ${__MVNW_QUIET_WGET:+"$__MVNW_QUIET_WGET"} "$distributionUrl" -O "$TMP_DOWNLOAD_DIR/$distributionUrlName" || die "wget: Failed to fetch $distributionUrl"[m
+[32m+[m[32melif [ -z "${MVNW_USERNAME-}" ] && command -v curl >/dev/null; then[m
+[32m+[m[32m  verbose "Found curl ... using curl"[m
+[32m+[m[32m  curl ${__MVNW_QUIET_CURL:+"$__MVNW_QUIET_CURL"} -f -L -o "$TMP_DOWNLOAD_DIR/$distributionUrlName" "$distributionUrl" || die "curl: Failed to fetch $distributionUrl"[m
+[32m+[m[32melif set_java_home; then[m
+[32m+[m[32m  verbose "Falling back to use Java to download"[m
+[32m+[m[32m  javaSource="$TMP_DOWNLOAD_DIR/Downloader.java"[m
+[32m+[m[32m  targetZip="$TMP_DOWNLOAD_DIR/$distributionUrlName"[m
+[32m+[m[32m  cat >"$javaSource" <<-END[m
+[32m+[m	[32mpublic class Downloader extends java.net.Authenticator[m
+[32m+[m	[32m{[m
+[32m+[m	[32m  protected java.net.PasswordAuthentication getPasswordAuthentication()[m
+[32m+[m	[32m  {[m
+[32m+[m	[32m    return new java.net.PasswordAuthentication( System.getenv( "MVNW_USERNAME" ), System.getenv( "MVNW_PASSWORD" ).toCharArray() );[m
+[32m+[m	[32m  }[m
+[32m+[m	[32m  public static void main( String[] args ) throws Exception[m
+[32m+[m	[32m  {[m
+[32m+[m	[32m    setDefault( new Downloader() );[m
+[32m+[m	[32m    java.nio.file.Files.copy( java.net.URI.create( args[0] ).toURL().openStream(), java.nio.file.Paths.get( args[1] ).toAbsolutePath().normalize() );[m
+[32m+[m	[32m  }[m
+[32m+[m	[32m}[m
+[32m+[m	[32mEND[m
+[32m+[m[32m  # For Cygwin/MinGW, switch paths to Windows format before running javac and java[m
+[32m+[m[32m  verbose " - Compiling Downloader.java ..."[m
+[32m+[m[32m  "$(native_path "$JAVACCMD")" "$(native_path "$javaSource")" || die "Failed to compile Downloader.java"[m
+[32m+[m[32m  verbose " - Running Downloader.java ..."[m
+[32m+[m[32m  "$(native_path "$JAVACMD")" -cp "$(native_path "$TMP_DOWNLOAD_DIR")" Downloader "$distributionUrl" "$(native_path "$targetZip")"[m
+[32m+[m[32mfi[m
+[32m+[m
+[32m+[m[32m# If specified, validate the SHA-256 sum of the Maven distribution zip file[m
+[32m+[m[32mif [ -n "${distributionSha256Sum-}" ]; then[m
+[32m+[m[32m  distributionSha256Result=false[m
+[32m+[m[32m  if [ "$MVN_CMD" = mvnd.sh ]; then[m
+[32m+[m[32m    echo "Checksum validation is not supported for maven-mvnd." >&2[m
+[32m+[m[32m    echo "Please disable validation by removing 'distributionSha256Sum' from your maven-wrapper.properties." >&2[m
+[32m+[m[32m    exit 1[m
+[32m+[m[32m  elif command -v sha256sum >/dev/null; then[m
+[32m+[m[32m    if echo "$distributionSha256Sum  $TMP_DOWNLOAD_DIR/$distributionUrlName" | sha256sum -c >/dev/null 2>&1; then[m
+[32m+[m[32m      distributionSha256Result=true[m
+[32m+[m[32m    fi[m
+[32m+[m[32m  elif command -v shasum >/dev/null; then[m
+[32m+[m[32m    if echo "$distributionSha256Sum  $TMP_DOWNLOAD_DIR/$distributionUrlName" | shasum -a 256 -c >/dev/null 2>&1; then[m
+[32m+[m[32m      distributionSha256Result=true[m
+[32m+[m[32m    fi[m
+[32m+[m[32m  else[m
+[32m+[m[32m    echo "Checksum validation was requested but neither 'sha256sum' or 'shasum' are available." >&2[m
+[32m+[m[32m    echo "Please install either command, or disable validation by removing 'distributionSha256Sum' from your maven-wrapper.properties." >&2[m
+[32m+[m[32m    exit 1[m
+[32m+[m[32m  fi[m
+[32m+[m[32m  if [ $distributionSha256Result = false ]; then[m
+[32m+[m[32m    echo "Error: Failed to validate Maven distribution SHA-256, your Maven distribution might be compromised." >&2[m
+[32m+[m[32m    echo "If you updated your Maven version, you need to update the specified distributionSha256Sum property." >&2[m
+[32m+[m[32m    exit 1[m
+[32m+[m[32m  fi[m
+[32m+[m[32mfi[m
+[32m+[m
+[32m+[m[32m# unzip and move[m
+[32m+[m[32mif command -v unzip >/dev/null; then[m
+[32m+[m[32m  unzip ${__MVNW_QUIET_UNZIP:+"$__MVNW_QUIET_UNZIP"} "$TMP_DOWNLOAD_DIR/$distributionUrlName" -d "$TMP_DOWNLOAD_DIR" || die "failed to unzip"[m
+[32m+[m[32melse[m
+[32m+[m[32m  tar xzf${__MVNW_QUIET_TAR:+"$__MVNW_QUIET_TAR"} "$TMP_DOWNLOAD_DIR/$distributionUrlName" -C "$TMP_DOWNLOAD_DIR" || die "failed to untar"[m
+[32m+[m[32mfi[m
+[32m+[m[32mprintf %s\\n "$distributionUrl" >"$TMP_DOWNLOAD_DIR/$distributionUrlNameMain/mvnw.url"[m
+[32m+[m[32mmv -- "$TMP_DOWNLOAD_DIR/$distributionUrlNameMain" "$MAVEN_HOME" || [ -d "$MAVEN_HOME" ] || die "fail to move MAVEN_HOME"[m
+[32m+[m
+[32m+[m[32mclean || :[m
+[32m+[m[32mexec_maven "$@"[m
+[1mdiff --git a/mvnw.cmd b/mvnw.cmd[m
+[1mnew file mode 100644[m
+[1mindex 0000000..249bdf3[m
+[1m--- /dev/null[m
+[1m+++ b/mvnw.cmd[m
+[36m@@ -0,0 +1,149 @@[m
+[32m+[m[32m<# : batch portion[m
+[32m+[m[32m@REM ----------------------------------------------------------------------------[m
+[32m+[m[32m@REM Licensed to the Apache Software Foundation (ASF) under one[m
+[32m+[m[32m@REM or more contributor license agreements.  See the NOTICE file[m
+[32m+[m[32m@REM distributed with this work for additional information[m
+[32m+[m[32m@REM regarding copyright ownership.  The ASF licenses this file[m
+[32m+[m[32m@REM to you under the Apache License, Version 2.0 (the[m
+[32m+[m[32m@REM "License"); you may not use this file except in compliance[m
+[32m+[m[32m@REM with the License.  You may obtain a copy of the License at[m
+[32m+[m[32m@REM[m
+[32m+[m[32m@REM    http://www.apache.org/licenses/LICENSE-2.0[m
+[32m+[m[32m@REM[m
+[32m+[m[32m@REM Unless required by applicable law or agreed to in writing,[m
+[32m+[m[32m@REM software distributed under the License is distributed on an[m
+[32m+[m[32m@REM "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY[m
+[32m+[m[32m@REM KIND, either express or implied.  See the License for the[m
+[32m+[m[32m@REM specific language governing permissions and limitations[m
+[32m+[m[32m@REM under the License.[m
+[32m+[m[32m@REM ----------------------------------------------------------------------------[m
+[32m+[m
+[32m+[m[32m@REM ----------------------------------------------------------------------------[m
+[32m+[m[32m@REM Apache Maven Wrapper startup batch script, version 3.3.2[m
+[32m+[m[32m@REM[m
+[32m+[m[32m@REM Optional ENV vars[m
+[32m+[m[32m@REM   MVNW_REPOURL - repo url base for downloading maven distribution[m
+[32m+[m[32m@REM   MVNW_USERNAME/MVNW_PASSWORD - user and password for downloading maven[m
+[32m+[m[32m@REM   MVNW_VERBOSE - true: enable verbose log; others: silence the output[m
+[32m+[m[32m@REM ----------------------------------------------------------------------------[m
+[32m+[m
+[32m+[m[32m@IF "%__MVNW_ARG0_NAME__%"=="" (SET __MVNW_ARG0_NAME__=%~nx0)[m
+[32m+[m[32m@SET __MVNW_CMD__=[m
+[32m+[m[32m@SET __MVNW_ERROR__=[m
+[32m+[m[32m@SET __MVNW_PSMODULEP_SAVE=%PSModulePath%[m
+[32m+[m[32m@SET PSModulePath=[m
+[32m+[m[32m@FOR /F "usebackq tokens=1* delims==" %%A IN (`powershell -noprofile "& {$scriptDir='%~dp0'; $script='%__MVNW_ARG0_NAME__%'; icm -ScriptBlock ([Scriptblock]::Create((Get-Content -Raw '%~f0'))) -NoNewScope}"`) DO @([m
+[32m+[m[32m  IF "%%A"=="MVN_CMD" (set __MVNW_CMD__=%%B) ELSE IF "%%B"=="" (echo %%A) ELSE (echo %%A=%%B)[m
+[32m+[m[32m)[m
+[32m+[m[32m@SET PSModulePath=%__MVNW_PSMODULEP_SAVE%[m
+[32m+[m[32m@SET __MVNW_PSMODULEP_SAVE=[m
+[32m+[m[32m@SET __MVNW_ARG0_NAME__=[m
+[32m+[m[32m@SET MVNW_USERNAME=[m
+[32m+[m[32m@SET MVNW_PASSWORD=[m
+[32m+[m[32m@IF NOT "%__MVNW_CMD__%"=="" (%__MVNW_CMD__% %*)[m
+[32m+[m[32m@echo Cannot start maven from wrapper >&2 && exit /b 1[m
+[32m+[m[32m@GOTO :EOF[m
+[32m+[m[32m: end batch / begin powershell #>[m
+[32m+[m
+[32m+[m[32m$ErrorActionPreference = "Stop"[m
+[32m+[m[32mif ($env:MVNW_VERBOSE -eq "true") {[m
+[32m+[m[32m  $VerbosePreference = "Continue"[m
+[32m+[m[32m}[m
+[32m+[m
+[32m+[m[32m# calculate distributionUrl, requires .mvn/wrapper/maven-wrapper.properties[m
+[32m+[m[32m$distributionUrl = (Get-Content -Raw "$scriptDir/.mvn/wrapper/maven-wrapper.properties" | ConvertFrom-StringData).distributionUrl[m
+[32m+[m[32mif (!$distributionUrl) {[m
+[32m+[m[32m  Write-Error "cannot read distributionUrl property in $scriptDir/.mvn/wrapper/maven-wrapper.properties"[m
+[32m+[m[32m}[m
+[32m+[m
+[32m+[m[32mswitch -wildcard -casesensitive ( $($distributionUrl -replace '^.*/','') ) {[m
+[32m+[m[32m  "maven-mvnd-*" {[m
+[32m+[m[32m    $USE_MVND = $true[m
+[32m+[m[32m    $distributionUrl = $distributionUrl -replace '-bin\.[^.]*$',"-windows-amd64.zip"[m
+[32m+[m[32m    $MVN_CMD = "mvnd.cmd"[m
+[32m+[m[32m    break[m
+[32m+[m[32m  }[m
+[32m+[m[32m  default {[m
+[32m+[m[32m    $USE_MVND = $false[m
+[32m+[m[32m    $MVN_CMD = $script -replace '^mvnw','mvn'[m
+[32m+[m[32m    break[m
+[32m+[m[32m  }[m
+[32m+[m[32m}[m
+[32m+[m
+[32m+[m[32m# apply MVNW_REPOURL and calculate MAVEN_HOME[m
+[32m+[m[32m# maven home pattern: ~/.m2/wrapper/dists/{apache-maven-<version>,maven-mvnd-<version>-<platform>}/<hash>[m
+[32m+[m[32mif ($env:MVNW_REPOURL) {[m
+[32m+[m[32m  $MVNW_REPO_PATTERN = if ($USE_MVND) { "/org/apache/maven/" } else { "/maven/mvnd/" }[m
+[32m+[m[32m  $distributionUrl = "$env:MVNW_REPOURL$MVNW_REPO_PATTERN$($distributionUrl -replace '^.*'+$MVNW_REPO_PATTERN,'')"[m
+[32m+[m[32m}[m
+[32m+[m[32m$distributionUrlName = $distributionUrl -replace '^.*/',''[m
+[32m+[m[32m$distributionUrlNameMain = $distributionUrlName -replace '\.[^.]*$','' -replace '-bin$',''[m
+[32m+[m[32m$MAVEN_HOME_PARENT = "$HOME/.m2/wrapper/dists/$distributionUrlNameMain"[m
+[32m+[m[32mif ($env:MAVEN_USER_HOME) {[m
+[32m+[m[32m  $MAVEN_HOME_PARENT = "$env:MAVEN_USER_HOME/wrapper/dists/$distributionUrlNameMain"[m
+[32m+[m[32m}[m
+[32m+[m[32m$MAVEN_HOME_NAME = ([System.Security.Cryptography.MD5]::Create().ComputeHash([byte[]][char[]]$distributionUrl) | ForEach-Object {$_.ToString("x2")}) -join ''[m
+[32m+[m[32m$MAVEN_HOME = "$MAVEN_HOME_PARENT/$MAVEN_HOME_NAME"[m
+[32m+[m
+[32m+[m[32mif (Test-Path -Path "$MAVEN_HOME" -PathType Container) {[m
+[32m+[m[32m  Write-Verbose "found existing MAVEN_HOME at $MAVEN_HOME"[m
+[32m+[m[32m  Write-Output "MVN_CMD=$MAVEN_HOME/bin/$MVN_CMD"[m
+[32m+[m[32m  exit $?[m
+[32m+[m[32m}[m
+[32m+[m
+[32m+[m[32mif (! $distributionUrlNameMain -or ($distributionUrlName -eq $distributionUrlNameMain)) {[m
+[32m+[m[32m  Write-Error "distributionUrl is not valid, must end with *-bin.zip, but found $distributionUrl"[m
+[32m+[m[32m}[m
+[32m+[m
+[32m+[m[32m# prepare tmp dir[m
+[32m+[m[32m$TMP_DOWNLOAD_DIR_HOLDER = New-TemporaryFile[m
+[32m+[m[32m$TMP_DOWNLOAD_DIR = New-Item -Itemtype Directory -Path "$TMP_DOWNLOAD_DIR_HOLDER.dir"[m
+[32m+[m[32m$TMP_DOWNLOAD_DIR_HOLDER.Delete() | Out-Null[m
+[32m+[m[32mtrap {[m
+[32m+[m[32m  if ($TMP_DOWNLOAD_DIR.Exists) {[m
+[32m+[m[32m    try { Remove-Item $TMP_DOWNLOAD_DIR -Recurse -Force | Out-Null }[m
+[32m+[m[32m    catch { Write-Warning "Cannot remove $TMP_DOWNLOAD_DIR" }[m
+[32m+[m[32m  }[m
+[32m+[m[32m}[m
+[32m+[m
+[32m+[m[32mNew-Item -Itemtype Directory -Path "$MAVEN_HOME_PARENT" -Force | Out-Null[m
+[32m+[m
+[32m+[m[32m# Download and Install Apache Maven[m
+[32m+[m[32mWrite-Verbose "Couldn't find MAVEN_HOME, downloading and installing it ..."[m
+[32m+[m[32mWrite-Verbose "Downloading from: $distributionUrl"[m
+[32m+[m[32mWrite-Verbose "Downloading to: $TMP_DOWNLOAD_DIR/$distributionUrlName"[m
+[32m+[m
+[32m+[m[32m$webclient = New-Object System.Net.WebClient[m
+[32m+[m[32mif ($env:MVNW_USERNAME -and $env:MVNW_PASSWORD) {[m
+[32m+[m[32m  $webclient.Credentials = New-Object System.Net.NetworkCredential($env:MVNW_USERNAME, $env:MVNW_PASSWORD)[m
+[32m+[m[32m}[m
+[32m+[m[32m[Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12[m
+[32m+[m[32m$webclient.DownloadFile($distributionUrl, "$TMP_DOWNLOAD_DIR/$distributionUrlName") | Out-Null[m
+[32m+[m
+[32m+[m[32m# If specified, validate the SHA-256 sum of the Maven distribution zip file[m
+[32m+[m[32m$distributionSha256Sum = (Get-Content -Raw "$scriptDir/.mvn/wrapper/maven-wrapper.properties" | ConvertFrom-StringData).distributionSha256Sum[m
+[32m+[m[32mif ($distributionSha256Sum) {[m
+[32m+[m[32m  if ($USE_MVND) {[m
+[32m+[m[32m    Write-Error "Checksum validation is not supported for maven-mvnd. `nPlease disable validation by removing 'distributionSha256Sum' from your maven-wrapper.properties."[m
+[32m+[m[32m  }[m
+[32m+[m[32m  Import-Module $PSHOME\Modules\Microsoft.PowerShell.Utility -Function Get-FileHash[m
+[32m+[m[32m  if ((Get-FileHash "$TMP_DOWNLOAD_DIR/$distributionUrlName" -Algorithm SHA256).Hash.ToLower() -ne $distributionSha256Sum) {[m
+[32m+[m[32m    Write-Error "Error: Failed to validate Maven distribution SHA-256, your Maven distribution might be compromised. If you updated your Maven version, you need to update the specified distributionSha256Sum property."[m
+[32m+[m[32m  }[m
+[32m+[m[32m}[m
+[32m+[m
+[32m+[m[32m# unzip and move[m
+[32m+[m[32mExpand-Archive "$TMP_DOWNLOAD_DIR/$distributionUrlName" -DestinationPath "$TMP_DOWNLOAD_DIR" | Out-Null[m
+[32m+[m[32mRename-Item -Path "$TMP_DOWNLOAD_DIR/$distributionUrlNameMain" -NewName $MAVEN_HOME_NAME | Out-Null[m
+[32m+[m[32mtry {[m
+[32m+[m[32m  Move-Item -Path "$TMP_DOWNLOAD_DIR/$MAVEN_HOME_NAME" -Destination $MAVEN_HOME_PARENT | Out-Null[m
+[32m+[m[32m} catch {[m
+[32m+[m[32m  if (! (Test-Path -Path "$MAVEN_HOME" -PathType Container)) {[m
+[32m+[m[32m    Write-Error "fail to move MAVEN_HOME"[m
+[32m+[m[32m  }[m
+[32m+[m[32m} finally {[m
+[32m+[m[32m  try { Remove-Item $TMP_DOWNLOAD_DIR -Recurse -Force | Out-Null }[m
+[32m+[m[32m  catch { Write-Warning "Cannot remove $TMP_DOWNLOAD_DIR" }[m
+[32m+[m[32m}[m
+[32m+[m
+[32m+[m[32mWrite-Output "MVN_CMD=$MAVEN_HOME/bin/$MVN_CMD"[m
+[1mdiff --git a/pom.xml b/pom.xml[m
+[1mnew file mode 100644[m
+[1mindex 0000000..d3b3fd4[m
+[1m--- /dev/null[m
+[1m+++ b/pom.xml[m
+[36m@@ -0,0 +1,139 @@[m
+[32m+[m[32m<?xml version="1.0" encoding="UTF-8"?>[m
+[32m+[m[32m<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"[m
+[32m+[m	[32mxsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">[m
+[32m+[m	[32m<modelVersion>4.0.0</modelVersion>[m
+[32m+[m	[32m<parent>[m
+[32m+[m		[32m<groupId>org.springframework.boot</groupId>[m
+[32m+[m		[32m<artifactId>spring-boot-starter-parent</artifactId>[m
+[32m+[m		[32m<version>3.4.1</version>[m
+[32m+[m		[32m<relativePath/> <!-- lookup parent from repository -->[m
+[32m+[m	[32m</parent>[m
+[32m+[m	[32m<groupId>com.codewithdhruv</groupId>[m
+[32m+[m	[32m<artifactId>Task_SpringBoot</artifactId>[m
+[32m+[m	[32m<version>0.0.1-SNAPSHOT</version>[m
+[32m+[m	[32m<name>Task_SpringBoot</name>[m
+[32m+[m	[32m<description>Demo project for Spring Boot</description>[m
+[32m+[m	[32m<url/>[m
+[32m+[m	[32m<licenses>[m
+[32m+[m		[32m<license/>[m
+[32m+[m	[32m</licenses>[m
+[32m+[m	[32m<developers>[m
+[32m+[m		[32m<developer/>[m
+[32m+[m	[32m</developers>[m
+[32m+[m	[32m<scm>[m
+[32m+[m		[32m<connection/>[m
+[32m+[m		[32m<developerConnection/>[m
+[32m+[m		[32m<tag/>[m
+[32m+[m		[32m<url/>[m
+[32m+[m	[32m</scm>[m
+[32m+[m	[32m<properties>[m
+[32m+[m		[32m<java.version>17</java.version>[m
+[32m+[m	[32m</properties>[m
+[32m+[m	[32m<dependencies>[m
+[32m+[m		[32m<dependency>[m
+[32m+[m			[32m<groupId>org.springframework.boot</groupId>[m
+[32m+[m			[32m<artifactId>spring-boot-starter-data-jpa</artifactId>[m
+[32m+[m		[32m</dependency>[m
+[32m+[m		[32m<dependency>[m
+[32m+[m			[32m<groupId>org.springframework.boot</groupId>[m
+[32m+[m			[32m<artifactId>spring-boot-starter-web</artifactId>[m
+[32m+[m		[32m</dependency>[m
+[32m+[m
+[32m+[m		[32m<dependency>[m
+[32m+[m			[32m<groupId>org.springframework.boot</groupId>[m
+[32m+[m			[32m<artifactId>spring-boot-starter-security</artifactId>[m
+[32m+[m		[32m</dependency>[m
+[32m+[m
+[32m+[m
+[32m+[m		[32m<dependency>[m
+[32m+[m			[32m<groupId>org.springframework.boot</groupId>[m
+[32m+[m			[32m<artifactId>spring-boot-starter-test</artifactId>[m
+[32m+[m			[32m<scope>test</scope>[m
+[32m+[m		[32m</dependency>[m
+[32m+[m
+[32m+[m		[32m<dependency>[m
+[32m+[m			[32m<groupId>org.springframework.boot</groupId>[m
+[32m+[m			[32m<artifactId>spring-boot-starter-security</artifactId>[m
+[32m+[m		[32m</dependency>[m
+[32m+[m		[32m<dependency>[m
+[32m+[m			[32m<groupId>io.jsonwebtoken</groupId>[m
+[32m+[m			[32m<artifactId>jjwt-api</artifactId>[m
+[32m+[m			[32m<version>0.11.5</version>[m
+[32m+[m		[32m</dependency>[m
+[32m+[m		[32m<dependency>[m
+[32m+[m			[32m<groupId>io.jsonwebtoken</groupId>[m
+[32m+[m			[32m<artifactId>jjwt-impl</artifactId>[m
+[32m+[m			[32m<version>0.11.5</version>[m
+[32m+[m		[32m</dependency>[m
+[32m+[m		[32m<dependency>[m
+[32m+[m			[32m<groupId>io.jsonwebtoken</groupId>[m
+[32m+[m			[32m<artifactId>jjwt-jackson</artifactId>[m
+[32m+[m			[32m<version>0.11.5</version>[m
+[32m+[m		[32m</dependency>[m
+[32m+[m		[32m<dependency>[m
+[32m+[m			[32m<groupId>org.springframework.security</groupId>[m
+[32m+[m			[32m<artifactId>spring-security-test</artifactId>[m
+[32m+[m			[32m<scope>test</scope>[m
+[32m+[m		[32m</dependency>[m
+[32m+[m		[32m<dependency>[m
+[32m+[m			[32m<groupId>io.jsonwebtoken</groupId>[m
+[32m+[m			[32m<artifactId>jjwt</artifactId>[m
+[32m+[m			[32m<version>0.9.1</version>[m
+[32m+[m		[32m</dependency>[m
+[32m+[m		[32m<dependency>[m
+[32m+[m			[32m<groupId>com.vaadin.external.google</groupId>[m
+[32m+[m			[32m<artifactId>android-json</artifactId>[m
+[32m+[m			[32m<version>0.0.20131108.vaadin1</version>[m
+[32m+[m			[32m<scope>compile</scope>[m
+[32m+[m		[32m</dependency>[m
+[32m+[m		[32m<dependency>[m
+[32m+[m			[32m<groupId>org.apache.commons</groupId>[m
+[32m+[m			[32m<artifactId>commons-lang3</artifactId>[m
+[32m+[m		[32m</dependency>[m
+[32m+[m
+[32m+[m		[32m<dependency>[m
+[32m+[m			[32m<groupId>com.mysql</groupId>[m
+[32m+[m			[32m<artifactId>mysql-connector-j</artifactId>[m
+[32m+[m			[32m<scope>runtime</scope>[m
+[32m+[m		[32m</dependency>[m
+[32m+[m		[32m<dependency>[m
+[32m+[m			[32m<groupId>org.projectlombok</groupId>[m
+[32m+[m			[32m<artifactId>lombok</artifactId>[m
+[32m+[m			[32m<optional>true</optional>[m
+[32m+[m		[32m</dependency>[m
+[32m+[m		[32m<dependency>[m
+[32m+[m			[32m<groupId>org.springframework.boot</groupId>[m
+[32m+[m			[32m<artifactId>spring-boot-starter-test</artifactId>[m
+[32m+[m			[32m<scope>test</scope>[m
+[32m+[m		[32m</dependency>[m
+[32m+[m	[32m</dependencies>[m
+[32m+[m
+[32m+[m	[32m<build>[m
+[32m+[m		[32m<plugins>[m
+[32m+[m			[32m<plugin>[m
+[32m+[m				[32m<groupId>org.apache.maven.plugins</groupId>[m
+[32m+[m				[32m<artifactId>maven-compiler-plugin</artifactId>[m
+[32m+[m				[32m<version>3.11.0</version> <!-- Ensure you're using a stable version -->[m
+[32m+[m				[32m<configuration>[m
+[32m+[m					[32m<source>17</source> <!-- Set to your JDK version -->[m
+[32m+[m					[32m<target>17</target> <!-- Set to your JDK version -->[m
+[32m+[m					[32m<annotationProcessorPaths>[m
+[32m+[m						[32m<path>[m
+[32m+[m							[32m<groupId>org.projectlombok</groupId>[m
+[32m+[m							[32m<artifactId>lombok</artifactId>[m
+[32m+[m							[32m<version>1.18.30</version> <!-- Specify the Lombok version -->[m
+[32m+[m						[32m</path>[m
+[32m+[m					[32m</annotationProcessorPaths>[m
+[32m+[m				[32m</configuration>[m
+[32m+[m			[32m</plugin>[m
+[32m+[m			[32m<plugin>[m
+[32m+[m				[32m<groupId>org.springframework.boot</groupId>[m
+[32m+[m				[32m<artifactId>spring-boot-maven-plugin</artifactId>[m
+[32m+[m				[32m<version>3.1.3</version> <!-- Use a compatible version with your Spring Boot -->[m
+[32m+[m				[32m<!-- Typically, Lombok should not be excluded here -->[m
+[32m+[m				[32m<!-- Remove the <excludes> section unless there’s a specific need -->[m
+[32m+[m			[32m</plugin>[m
+[32m+[m		[32m</plugins>[m
+[32m+[m	[32m</build>[m
+[32m+[m
+[32m+[m[32m</project>[m
+[1mdiff --git a/src/main/java/com/codewithdhruv/Task_SpringBoot/Dto/AuthenticationRequest.java b/src/main/java/com/codewithdhruv/Task_SpringBoot/Dto/AuthenticationRequest.java[m
+[1mnew file mode 100644[m
+[1mindex 0000000..a44313c[m
+[1m--- /dev/null[m
+[1m+++ b/src/main/java/com/codewithdhruv/Task_SpringBoot/Dto/AuthenticationRequest.java[m
+[36m@@ -0,0 +1,10 @@[m
+[32m+[m[32mpackage com.codewithdhruv.Task_SpringBoot.Dto;[m
+[32m+[m
+[32m+[m[32mimport lombok.Data;[m
+[32m+[m
+[32m+[m[32m@Data[m
+[32m+[m[32mpublic class AuthenticationRequest {[m
+[32m+[m
+[32m+[m[32m    private String email;[m
+[32m+[m[32m    private String password;[m
+[32m+[m[32m}[m
+[1mdiff --git a/src/main/java/com/codewithdhruv/Task_SpringBoot/Dto/AuthenticationResponse.java b/src/main/java/com/codewithdhruv/Task_SpringBoot/Dto/AuthenticationResponse.java[m
+[1mnew file mode 100644[m
+[1mindex 0000000..caef188[m
+[1m--- /dev/null[m
+[1m+++ b/src/main/java/com/codewithdhruv/Task_SpringBoot/Dto/AuthenticationResponse.java[m
+[36m@@ -0,0 +1,12 @@[m
+[32m+[m[32mpackage com.codewithdhruv.Task_SpringBoot.Dto;[m
+[32m+[m
+[32m+[m[32mimport com.codewithdhruv.Task_SpringBoot.enums.UserRole;[m
+[32m+[m[32mimport lombok.Data;[m
+[32m+[m
+[32m+[m[32m@Data[m
+[32m+[m[32mpublic class AuthenticationResponse {[m
+[32m+[m
+[32m+[m[32m    private String jwt;[m
+[32m+[m[32m    private Long userId;[m
+[32m+[m[32m    private UserRole userRole;[m
+[32m+[m[32m}[m
+[1mdiff --git a/src/main/java/com/codewithdhruv/Task_SpringBoot/Dto/CommentDto.java b/src/main/java/com/codewithdhruv/Task_SpringBoot/Dto/CommentDto.java[m
+[1mnew file mode 100644[m
+[1mindex 0000000..d2dccb4[m
+[1m--- /dev/null[m
+[1m+++ b/src/main/java/com/codewithdhruv/Task_SpringBoot/Dto/CommentDto.java[m
+[36m@@ -0,0 +1,18 @@[m
+[32m+[m[32mpackage com.codewithdhruv.Task_SpringBoot.Dto;[m
+[32m+[m
+[32m+[m
+[32m+[m[32mimport lombok.Data;[m
+[32m+[m
+[32m+[m[32mimport java.util.Date;[m
+[32m+[m
+[32m+[m[32m@Data[m
+[32m+[m[32mpublic class CommentDto {[m
+[32m+[m
+[32m+[m[32m    private Long id;[m
+[32m+[m[32m    private String content;[m
+[32m+[m[32m    private Date createdAt;[m
+[32m+[m[32m    private Long taskId;[m
+[32m+[m[32m    private Long userId;[m
+[32m+[m[32m    private String postedBy;[m
+[32m+[m
+[32m+[m[32m}[m
+[1mdiff --git a/src/main/java/com/codewithdhruv/Task_SpringBoot/Dto/SignupRequest.java b/src/main/java/com/codewithdhruv/Task_SpringBoot/Dto/SignupRequest.java[m
+[1mnew file mode 100644[m
+[1mindex 0000000..75cee76[m
+[1m--- /dev/null[m
+[1m+++ b/src/main/java/com/codewithdhruv/Task_SpringBoot/Dto/SignupRequest.java[m
+[36m@@ -0,0 +1,10 @@[m
+[32m+[m[32mpackage com.codewithdhruv.Task_SpringBoot.Dto;[m
+[32m+[m
+[32m+[m[32mimport lombok.Data;[m
+[32m+[m
+[32m+[m[32m@Data[m
+[32m+[m[32mpublic class SignupRequest {[m
+[32m+[m[32m    private String email;[m
+[32m+[m[32m    private String name;[m
+[32m+[m[32m    private String password;[m
+[32m+[m[32m}[m
+[1mdiff --git a/src/main/java/com/codewithdhruv/Task_SpringBoot/Dto/TaskDTO.java b/src/main/java/com/codewithdhruv/Task_SpringBoot/Dto/TaskDTO.java[m
+[1mnew file mode 100644[m
+[1mindex 0000000..f76fecc[m
+[1m--- /dev/null[m
+[1m+++ b/src/main/java/com/codewithdhruv/Task_SpringBoot/Dto/TaskDTO.java[m
+[36m@@ -0,0 +1,26 @@[m
+[32m+[m[32mpackage com.codewithdhruv.Task_SpringBoot.Dto;[m
+[32m+[m
+[32m+[m[32mimport com.codewithdhruv.Task_SpringBoot.enums.TaskStatus;[m
+[32m+[m[32mimport lombok.Data;[m
+[32m+[m
+[32m+[m[32mimport java.util.Date;[m
+[32m+[m
+[32m+[m[32m@Data[m
+[32m+[m[32mpublic class TaskDTO {[m
+[32m+[m
+[32m+[m[32m    private Long id;[m
+[32m+[m
+[32m+[m[32m    private String title;[m
+[32m+[m
+[32m+[m[32m    private String description;[m
+[32m+[m
+[32m+[m[32m    private Date dueDate;[m
+[32m+[m
+[32m+[m[32m    private String priority;[m
+[32m+[m
+[32m+[m[32m    private TaskStatus taskStatus;[m
+[32m+[m
+[32m+[m[32m    private Long employeeId;[m
+[32m+[m
+[32m+[m[32m    private String employeeName;[m
+[32m+[m[32m}[m
+[1mdiff --git a/src/main/java/com/codewithdhruv/Task_SpringBoot/Dto/UserDto.java b/src/main/java/com/codewithdhruv/Task_SpringBoot/Dto/UserDto.java[m
+[1mnew file mode 100644[m
+[1mindex 0000000..10284b2[m
+[1m--- /dev/null[m
+[1m+++ b/src/main/java/com/codewithdhruv/Task_SpringBoot/Dto/UserDto.java[m
+[36m@@ -0,0 +1,13 @@[m
+[32m+[m[32mpackage com.codewithdhruv.Task_SpringBoot.Dto;[m
+[32m+[m
+[32m+[m[32mimport com.codewithdhruv.Task_SpringBoot.enums.UserRole;[m
+[32m+[m[32mimport lombok.Data;[m
+[32m+[m
+[32m+[m[32m@Data[m
+[32m+[m[32mpublic class UserDto {[m
+[32m+[m[32m    private Long id;[m
+[32m+[m[32m    private String email;[m
+[32m+[m[32m    private String name;[m
+[32m+[m[32m    private String password;[m
+[32m+[m[32m    private UserRole userRole;[m
+[32m+[m[32m}[m
+[1mdiff --git a/src/main/java/com/codewithdhruv/Task_SpringBoot/TaskSpringBootApplication.java b/src/main/java/com/codewithdhruv/Task_SpringBoot/TaskSpringBootApplication.java[m
+[1mnew file mode 100644[m
+[1mindex 0000000..dd6c7a1[m
+[1m--- /dev/null[m
+[1m+++ b/src/main/java/com/codewithdhruv/Task_SpringBoot/TaskSpringBootApplication.java[m
+[36m@@ -0,0 +1,13 @@[m
+[32m+[m[32mpackage com.codewithdhruv.Task_SpringBoot;[m
+[32m+[m
+[32m+[m[32mimport org.springframework.boot.SpringApplication;[m
+[32m+[m[32mimport org.springframework.boot.autoconfigure.SpringBootApplication;[m
+[32m+[m
+[32m+[m[32m@SpringBootApplication[m
+[32m+[m[32mpublic class TaskSpringBootApplication {[m
+[32m+[m
+[32m+[m	[32mpublic static void main(String[] args) {[m
+[32m+[m		[32mSpringApplication.run(TaskSpringBootApplication.class, args);[m
+[32m+[m	[32m}[m
+[32m+[m
+[32m+[m[32m}[m
+[1mdiff --git a/src/main/java/com/codewithdhruv/Task_SpringBoot/config/CorsConfig.java b/src/main/java/com/codewithdhruv/Task_SpringBoot/config/CorsConfig.java[m
+[1mnew file mode 100644[m
+[1mindex 0000000..53ef7af[m
+[1m--- /dev/null[m
+[1m+++ b/src/main/java/com/codewithdhruv/Task_SpringBoot/config/CorsConfig.java[m
+[36m@@ -0,0 +1,25 @@[m
+[32m+[m[32m//package com.codewithdhruv.Task_SpringBoot.config;[m
+[32m+[m[32m//[m
+[32m+[m[32m//import org.springframework.context.annotation.Bean;[m
+[32m+[m[32m//import org.springframework.context.annotation.Configuration;[m
+[32m+[m[32m//import org.springframework.web.cors.CorsConfiguration;[m
+[32m+[m[32m//import org.springframework.web.cors.UrlBasedCorsConfigurationSource;[m
+[32m+[m[32m//import org.springframework.web.filter.CorsFilter;[m
+[32m+[m[32m//[m
+[32m+[m[32m//import java.util.List;[m
+[32m+[m[32m//[m
+[32m+[m[32m//@Configuration[m
+[32m+[m[32m//public class CorsConfig {[m
+[32m+[m[32m//    @Bean[m
+[32m+[m[32m//    public CorsFilter corsFilter() {[m
+[32m+[m[32m//        CorsConfiguration config = new CorsConfiguration();[m
+[32m+[m[32m//        config.setAllowedOrigins(List.of("http://localhost:4200")); // Allow Angular frontend[m
+[32m+[m[32m//        config.setAllowedMethods(List.of("GET", "POST", "PUT", "DELETE", "OPTIONS"));[m
+[32m+[m[32m//        config.setAllowedHeaders(List.of("*"));[m
+[32m+[m[32m//        config.setAllowCredentials(true);[m
+[32m+[m[32m//[m
+[32m+[m[32m//        UrlBasedCorsConfigurationSource source = new UrlBasedCorsConfigurationSource();[m
+[32m+[m[32m//        source.registerCorsConfiguration("/**", config);[m
+[32m+[m[32m//        return new CorsFilter(source);[m
+[32m+[m[32m//    }[m
+[32m+[m[32m//}[m
+[1mdiff --git a/src/main/java/com/codewithdhruv/Task_SpringBoot/config/JwtAuthenticationFilter.java b/src/main/java/com/codewithdhruv/Task_SpringBoot/config/JwtAuthenticationFilter.java[m
+[1mnew file mode 100644[m
+[1mindex 0000000..df0b6df[m
+[1m--- /dev/null[m
+[1m+++ b/src/main/java/com/codewithdhruv/Task_SpringBoot/config/JwtAuthenticationFilter.java[m
+[36m@@ -0,0 +1,53 @@[m
+[32m+[m[32mpackage com.codewithdhruv.Task_SpringBoot.config;[m
+[32m+[m
+[32m+[m[32mimport com.codewithdhruv.Task_SpringBoot.service.jwt.UserService;[m
+[32m+[m[32mimport com.codewithdhruv.Task_SpringBoot.utils.JwtUtil;[m
+[32m+[m[32mimport jakarta.servlet.FilterChain;[m
+[32m+[m[32mimport jakarta.servlet.ServletException;[m
+[32m+[m[32mimport jakarta.servlet.http.HttpServletRequest;[m
+[32m+[m[32mimport jakarta.servlet.http.HttpServletResponse;[m
+[32m+[m[32mimport lombok.NonNull;[m
+[32m+[m[32mimport lombok.RequiredArgsConstructor;[m
+[32m+[m[32mimport org.apache.commons.lang3.StringUtils;[m
+[32m+[m[32mimport org.springframework.security.authentication.UsernamePasswordAuthenticationToken;[m
+[32m+[m[32mimport org.springframework.security.core.context.SecurityContext;[m
+[32m+[m[32mimport org.springframework.security.core.context.SecurityContextHolder;[m
+[32m+[m[32mimport org.springframework.security.core.userdetails.UserDetails;[m
+[32m+[m[32mimport org.springframework.security.web.authentication.WebAuthenticationDetailsSource;[m
+[32m+[m[32mimport org.springframework.stereotype.Component;[m
+[32m+[m[32mimport org.springframework.web.filter.OncePerRequestFilter;[m
+[32m+[m
+[32m+[m[32mimport java.io.IOException;[m
+[32m+[m
+[32m+[m[32m@Component[m
+[32m+[m[32m@RequiredArgsConstructor[m
+[32m+[m[32mpublic class JwtAuthenticationFilter extends OncePerRequestFilter {[m
+[32m+[m
+[32m+[m[32m    private final JwtUtil jwtUtil;[m
+[32m+[m[32m    private final UserService userService;[m
+[32m+[m
+[32m+[m[32m    @Override[m
+[32m+[m[32m    protected void doFilterInternal(@NonNull HttpServletRequest request,[m
+[32m+[m[32m                                    @NonNull HttpServletResponse response, @NonNull FilterChain filterChain) throws ServletException, IOException {[m
+[32m+[m[32m        final String authHeader=request.getHeader("Authorization");[m
+[32m+[m[32m        final String jwt;[m
+[32m+[m[32m        final String userEmail;[m
+[32m+[m[32m        if(StringUtils.isEmpty(authHeader) || !StringUtils.startsWith(authHeader,"Bearer ")) {[m
+[32m+[m[32m            filterChain.doFilter(request,response);[m
+[32m+[m[32m            return;[m
+[32m+[m[32m        }[m
+[32m+[m[32m        jwt=authHeader.substring(7);[m
+[32m+[m[32m        userEmail=jwtUtil.extractUserName(jwt);[m
+[32m+[m[32m        if(StringUtils.isNotEmpty(userEmail) && SecurityContextHolder.getContext().getAuthentication()==null) {[m
+[32m+[m[32m            UserDetails userDetails=userService.userDetailsService().loadUserByUsername(userEmail);[m
+[32m+[m[32m            if(jwtUtil.isTokenValid(jwt,userDetails)) {[m
+[32m+[m[32m                SecurityContext context=SecurityContextHolder.createEmptyContext();[m
+[32m+[m[32m                UsernamePasswordAuthenticationToken authToken=new UsernamePasswordAuthenticationToken(userDetails,null,userDetails.getAuthorities());[m
+[32m+[m[32m                authToken.setDetails(new WebAuthenticationDetailsSource().buildDetails(request));[m
+[32m+[m[32m                context.setAuthentication(authToken);[m
+[32m+[m[32m                SecurityContextHolder.setContext(context);[m
+[32m+[m[32m            }[m
+[32m+[m[32m        }[m
+[32m+[m[32m        filterChain.doFilter(request,response);[m
+[32m+[m[32m    }[m
+[32m+[m[32m}[m
+[1mdiff --git a/src/main/java/com/codewithdhruv/Task_SpringBoot/config/WebSecurityConfig.java b/src/main/java/com/codewithdhruv/Task_SpringBoot/config/WebSecurityConfig.java[m
+[1mnew file mode 100644[m
+[1mindex 0000000..d34ec07[m
+[1m--- /dev/null[m
+[1m+++ b/src/main/java/com/codewithdhruv/Task_SpringBoot/config/WebSecurityConfig.java[m
+[36m@@ -0,0 +1,149 @@[m
+[32m+[m[32m//package com.codewithdhruv.Task_SpringBoot.config;[m
+[32m+[m[32m//[m
+[32m+[m[32m//import com.codewithdhruv.Task_SpringBoot.enums.UserRole;[m
+[32m+[m[32m//import com.codewithdhruv.Task_SpringBoot.service.jwt.UserService;[m
+[32m+[m[32m//import lombok.RequiredArgsConstructor;[m
+[32m+[m[32m//import org.springframework.boot.autoconfigure.liquibase.LiquibaseProperties;[m
+[32m+[m[32m//import org.springframework.context.annotation.Bean;[m
+[32m+[m[32m//import org.springframework.context.annotation.Configuration;[m
+[32m+[m[32m//import org.springframework.security.authentication.AuthenticationManager;[m
+[32m+[m[32m//import org.springframework.security.authentication.AuthenticationProvider;[m
+[32m+[m[32m//import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;[m
+[32m+[m[32m//import org.springframework.security.authentication.dao.DaoAuthenticationProvider;[m
+[32m+[m[32m//import org.springframework.security.config.annotation.authentication.configuration.AuthenticationConfiguration;[m
+[32m+[m[32m//import org.springframework.security.config.annotation.method.configuration.EnableMethodSecurity;[m
+[32m+[m[32m//import org.springframework.security.config.annotation.web.builders.HttpSecurity;[m
+[32m+[m[32m//import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;[m
+[32m+[m[32m//import org.springframework.security.config.annotation.web.configurers.AbstractHttpConfigurer;[m
+[32m+[m[32m//import org.springframework.security.config.http.SessionCreationPolicy;[m
+[32m+[m[32m//import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;[m
+[32m+[m[32m//import org.springframework.security.web.SecurityFilterChain;[m
+[32m+[m[32m//import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;[m
+[32m+[m[32m//[m
+[32m+[m[32m//@Configuration[m
+[32m+[m[32m//@EnableWebSecurity[m
+[32m+[m[32m//@EnableMethodSecurity[m
+[32m+[m[32m//@RequiredArgsConstructor[m
+[32m+[m[32m//public class WebSecurityConfig {[m
+[32m+[m[32m//[m
+[32m+[m[32m//    private final JwtAuthenticationFilter jwtAuthenticationFilter;[m
+[32m+[m[32m//    private final UserService userService;[m
+[32m+[m[32m//[m
+[32m+[m[32m//    @Bean[m
+[32m+[m[32m//    public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {[m
+[32m+[m[32m//        http.csrf(AbstractHttpConfigurer::disable)[m
+[32m+[m[32m//                .authorizeHttpRequests(request -> request.requestMatchers("/api/auth/**").permitAll()[m
+[32m+[m[32m//                        .requestMatchers("/api/admin/**").hasAnyAuthority(UserRole.ADMIN.name())[m
+[32m+[m[32m//                        .requestMatchers("/api/employee/**").hasAnyAuthority(UserRole.EMPLOYEE.name())[m
+[32m+[m[32m//                        .anyRequest().authenticated()).sessionManagement(manager -> manager.sessionCreationPolicy(SessionCreationPolicy.STATELESS))[m
+[32m+[m[32m//                .authenticationProvider(authenticationProvider()).addFilterBefore(jwtAuthenticationFilter, UsernamePasswordAuthenticationFilter.class);[m
+[32m+[m[32m//[m
+[32m+[m[32m//        return http.build();[m
+[32m+[m[32m//[m
+[32m+[m[32m//    }[m
+[32m+[m[32m//[m
+[32m+[m[32m//    @Bean[m
+[32m+[m[32m//    public BCryptPasswordEncoder bCryptPasswordEncoder() {[m
+[32m+[m[32m//        return new BCryptPasswordEncoder();[m
+[32m+[m[32m//[m
+[32m+[m[32m//    }[m
+[32m+[m[32m//[m
+[32m+[m[32m//    @Bean[m
+[32m+[m[32m//    public AuthenticationProvider authenticationProvider() {[m
+[32m+[m[32m//        DaoAuthenticationProvider authProvider=new DaoAuthenticationProvider();[m
+[32m+[m[32m//        authProvider.setUserDetailsService(userService.userDetailsService());[m
+[32m+[m[32m//        authProvider.setPasswordEncoder(bCryptPasswordEncoder());[m
+[32m+[m[32m//        return authProvider;[m
+[32m+[m[32m//    }[m
+[32m+[m[32m//[m
+[32m+[m[32m//    @Bean[m
+[32m+[m[32m//    public AuthenticationManager authenticationManager(AuthenticationConfiguration config) throws  Exception {[m
+[32m+[m[32m//        return config.getAuthenticationManager();[m
+[32m+[m[32m//[m
+[32m+[m[32m//    }[m
+[32m+[m[32m//}[m
+[32m+[m[32mpackage com.codewithdhruv.Task_SpringBoot.config;[m
+[32m+[m
+[32m+[m[32mimport com.codewithdhruv.Task_SpringBoot.enums.UserRole;[m
+[32m+[m[32mimport com.codewithdhruv.Task_SpringBoot.service.jwt.UserService;[m
+[32m+[m[32mimport lombok.RequiredArgsConstructor;[m
+[32m+[m[32mimport org.springframework.context.annotation.Bean;[m
+[32m+[m[32mimport org.springframework.context.annotation.Configuration;[m
+[32m+[m[32mimport org.springframework.security.authentication.AuthenticationManager;[m
+[32m+[m[32mimport org.springframework.security.authentication.AuthenticationProvider;[m
+[32m+[m[32mimport org.springframework.security.authentication.dao.DaoAuthenticationProvider;[m
+[32m+[m[32mimport org.springframework.security.config.annotation.authentication.configuration.AuthenticationConfiguration;[m
+[32m+[m[32mimport org.springframework.security.config.annotation.method.configuration.EnableMethodSecurity;[m
+[32m+[m[32mimport org.springframework.security.config.annotation.web.builders.HttpSecurity;[m
+[32m+[m[32mimport org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;[m
+[32m+[m[32mimport org.springframework.security.config.annotation.web.configurers.AbstractHttpConfigurer;[m
+[32m+[m[32mimport org.springframework.security.config.http.SessionCreationPolicy;[m
+[32m+[m[32mimport org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;[m
+[32m+[m[32mimport org.springframework.security.web.SecurityFilterChain;[m
+[32m+[m[32mimport org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;[m
+[32m+[m[32mimport org.springframework.web.cors.CorsConfiguration;[m
+[32m+[m[32mimport org.springframework.web.cors.UrlBasedCorsConfigurationSource;[m
+[32m+[m[32mimport org.springframework.web.filter.CorsFilter;[m
+[32m+[m
+[32m+[m[32mimport java.util.List;[m
+[32m+[m
+[32m+[m[32m@Configuration[m
+[32m+[m[32m@EnableWebSecurity[m
+[32m+[m[32m@EnableMethodSecurity[m
+[32m+[m[32m@RequiredArgsConstructor[m
+[32m+[m[32mpublic class WebSecurityConfig {[m
+[32m+[m
+[32m+[m[32m    private final JwtAuthenticationFilter jwtAuthenticationFilter;[m
+[32m+[m[32m    private final UserService userService;[m
+[32m+[m
+[32m+[m[32m    @Bean[m
+[32m+[m[32m    public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {[m
+[32m+[m[32m        http[m
+[32m+[m[32m                .cors(cors -> cors.configurationSource(corsConfigurationSource())) // Enable CORS[m
+[32m+[m[32m                .csrf(AbstractHttpConfigurer::disable)[m
+[32m+[m[32m                .authorizeHttpRequests(request -> request[m
+[32m+[m[32m                        .requestMatchers("/api/auth/**").permitAll()[m
+[32m+[m[32m                        .requestMatchers("/api/admin/**").hasAnyAuthority(UserRole.ADMIN.name())[m
+[32m+[m[32m                        .requestMatchers("/api/employee/**").hasAnyAuthority(UserRole.EMPLOYEE.name())[m
+[32m+[m[32m                        .anyRequest().authenticated()[m
+[32m+[m[32m                )[m
+[32m+[m[32m                .sessionManagement(manager -> manager.sessionCreationPolicy(SessionCreationPolicy.STATELESS))[m
+[32m+[m[32m                .authenticationProvider(authenticationProvider())[m
+[32m+[m[32m                .addFilterBefore(jwtAuthenticationFilter, UsernamePasswordAuthenticationFilter.class);[m
+[32m+[m
+[32m+[m[32m        return http.build();[m
+[32m+[m[32m    }[m
+[32m+[m[32m    @Bean[m
+[32m+[m[32m    public UrlBasedCorsConfigurationSource corsConfigurationSource() {[m
+[32m+[m[32m        CorsConfiguration config = new CorsConfiguration();[m
+[32m+[m[32m        config.setAllowedOrigins(List.of("http://localhost:4200")); // Allow frontend origin[m
+[32m+[m[32m        config.setAllowedMethods(List.of("GET", "POST", "PUT", "DELETE", "OPTIONS"));[m
+[32m+[m[32m        config.setAllowedHeaders(List.of("*"));[m
+[32m+[m[32m        config.setExposedHeaders(List.of("Authorization")); // Expose JWT Token[m
+[32m+[m[32m        config.setAllowCredentials(true); // Allow cookies or Authorization headers[m
+[32m+[m
+[32m+[m[32m        UrlBasedCorsConfigurationSource source = new UrlBasedCorsConfigurationSource();[m
+[32m+[m[32m        source.registerCorsConfiguration("/**", config);[m
+[32m+[m[32m        return source;[m
+[32m+[m[32m    }[m
+[32m+[m
+[32m+[m
+[32m+[m
+[32m+[m[32m    @Bean[m
+[32m+[m[32m    public BCryptPasswordEncoder bCryptPasswordEncoder() {[m
+[32m+[m[32m        return new BCryptPasswordEncoder();[m
+[32m+[m[32m    }[m
+[32m+[m
+[32m+[m[32m    @Bean[m
+[32m+[m[32m    public AuthenticationProvider authenticationProvider() {[m
+[32m+[m[32m        DaoAuthenticationProvider authProvider = new DaoAuthenticationProvider();[m
+[32m+[m[32m        authProvider.setUserDetailsService(userService.userDetailsService());[m
+[32m+[m[32m        authProvider.setPasswordEncoder(bCryptPasswordEncoder());[m
+[32m+[m[32m        return authProvider;[m
+[32m+[m[32m    }[m
+[32m+[m
+[32m+[m[32m    @Bean[m
+[32m+[m[32m    public AuthenticationManager authenticationManager(AuthenticationConfiguration config) throws Exception {[m
+[32m+[m[32m        return config.getAuthenticationManager();[m
+[32m+[m[32m    }[m
+[32m+[m[32m}[m
+[1mdiff --git a/src/main/java/com/codewithdhruv/Task_SpringBoot/controller/admin/AdminController.java b/src/main/java/com/codewithdhruv/Task_SpringBoot/controller/admin/AdminController.java[m
+[1mnew file mode 100644[m
+[1mindex 0000000..190f451[m
+[1m--- /dev/null[m
+[1m+++ b/src/main/java/com/codewithdhruv/Task_SpringBoot/controller/admin/AdminController.java[m
+[36m@@ -0,0 +1,85 @@[m
+[32m+[m[32mpackage com.codewithdhruv.Task_SpringBoot.controller.admin;[m
+[32m+[m
+[32m+[m[32mimport com.codewithdhruv.Task_SpringBoot.Dto.CommentDto;[m
+[32m+[m[32mimport com.codewithdhruv.Task_SpringBoot.Dto.TaskDTO;[m
+[32m+[m[32mimport com.codewithdhruv.Task_SpringBoot.entities.Task;[m
+[32m+[m[32mimport com.codewithdhruv.Task_SpringBoot.service.admin.AdminService;[m
+[32m+[m[32mimport lombok.RequiredArgsConstructor;[m
+[32m+[m[32mimport org.springframework.http.HttpStatus;[m
+[32m+[m[32mimport org.springframework.http.ResponseEntity;[m
+[32m+[m[32mimport org.springframework.web.bind.annotation.*;[m
+[32m+[m
+[32m+[m[32mimport java.util.HashMap;[m
+[32m+[m[32mimport java.util.List;[m
+[32m+[m[32mimport java.util.Map;[m
+[32m+[m
+[32m+[m[32m@RestController[m
+[32m+[m[32m@RequiredArgsConstructor[m
+[32m+[m[32m@RequestMapping("/api/admin")[m
+[32m+[m[32m@CrossOrigin("*")[m
+[32m+[m[32mpublic class AdminController {[m
+[32m+[m
+[32m+[m[32m    private final AdminService adminService;[m
+[32m+[m
+[32m+[m[32m    @GetMapping("/users")[m
+[32m+[m[32m    public ResponseEntity<?> getUsers(){[m
+[32m+[m[32m        return ResponseEntity.ok(adminService.getUsers());[m
+[32m+[m[32m    }[m
+[32m+[m
+[32m+[m[32m    @PostMapping("/task")[m
+[32m+[m[32m    public ResponseEntity<TaskDTO> createTask(@RequestBody TaskDTO taskDTO) {[m
+[32m+[m[32m        TaskDTO createdTaskDTO  =  adminService.createTask(taskDTO);[m
+[32m+[m[32m        if(createdTaskDTO == null) { return ResponseEntity.status(HttpStatus.BAD_REQUEST).build();}[m
+[32m+[m
+[32m+[m[32m        return ResponseEntity.status(HttpStatus.CREATED).body(createdTaskDTO);[m
+[32m+[m[32m    }[m
+[32m+[m
+[32m+[m[32m    @GetMapping("/tasks")[m
+[32m+[m[32m    public ResponseEntity<?> getAllTasks(){[m
+[32m+[m[32m        return ResponseEntity.ok(adminService.getAllTasks());[m
+[32m+[m[32m    }[m
+[32m+[m
+[32m+[m
+[32m+[m[32m    @DeleteMapping("/task/{id}")[m
+[32m+[m[32m    public ResponseEntity<Map<String, String>> deleteTask(@PathVariable Long id) {[m
+[32m+[m[32m        adminService.deleteTask(id);[m
+[32m+[m
+[32m+[m[32m        // Return a proper JSON response instead of plain text[m
+[32m+[m[32m        Map<String, String> response = new HashMap<>();[m
+[32m+[m[32m        response.put("message", "Task deleted successfully");[m
+[32m+[m
+[32m+[m[32m        return ResponseEntity.ok(response);[m
+[32m+[m[32m    }[m
+[32m+[m
+[32m+[m[32m    @GetMapping("/task/{id}")[m
+[32m+[m[32m    public ResponseEntity<TaskDTO> getTaskById(@PathVariable Long id){[m
+[32m+[m[32m        return ResponseEntity.ok(adminService.getTaskById(id));[m
+[32m+[m[32m    }[m
+[32m+[m
+[32m+[m[32m    @PutMapping("/task/{id}")[m
+[32m+[m[32m    public ResponseEntity<TaskDTO> updateTask(@PathVariable Long id, @RequestBody TaskDTO taskDTO) {[m
+[32m+[m[32m        TaskDTO updatedTask = adminService.updateTask(id,taskDTO);[m
+[32m+[m[32m        if(updatedTask==null) return ResponseEntity.notFound().build();[m
+[32m+[m[32m        return ResponseEntity.ok(updatedTask);[m
+[32m+[m[32m    }[m
+[32m+[m
+[32m+[m[32m    @GetMapping("/tasks/search/{title}")[m
+[32m+[m[32m    public ResponseEntity<List<TaskDTO>> searchTitle(@PathVariable String title){[m
+[32m+[m[32m        return ResponseEntity.ok(adminService.searchTaskByTitle(title));[m
+[32m+[m[32m    }[m
+[32m+[m
+[32m+[m[32m    @PostMapping("/task/comment/{taskId}")[m
+[32m+[m[32m    public ResponseEntity<CommentDto> createComment(@PathVariable Long taskId, @RequestParam String content) {[m
+[32m+[m[32m        CommentDto commentDto = adminService.createComment(taskId,content);[m
+[32m+[m[32m        if(commentDto==null) return ResponseEntity.status(HttpStatus.BAD_REQUEST).build();[m
+[32m+[m[32m        return ResponseEntity.status(HttpStatus.CREATED).body(commentDto);[m
+[32m+[m[32m    }[m
+[32m+[m
+[32m+[m[32m    @GetMapping("/task/comments/{taskId}")[m
+[32m+[m[32m    public ResponseEntity<List<CommentDto>> getCommentsByTaskId(@PathVariable Long taskId) {[m
+[32m+[m[32m        return ResponseEntity.ok(adminService.getCommentsByTaskId(taskId));[m
+[32m+[m
+[32m+[m[32m    }[m
+[32m+[m[32m}[m
+[32m+[m
+[32m+[m
+[1mdiff --git a/src/main/java/com/codewithdhruv/Task_SpringBoot/controller/auth/AuthController.java b/src/main/java/com/codewithdhruv/Task_SpringBoot/controller/auth/AuthController.java[m
+[1mnew file mode 100644[m
+[1mindex 0000000..65dee46[m
+[1m--- /dev/null[m
+[1m+++ b/src/main/java/com/codewithdhruv/Task_SpringBoot/controller/auth/AuthController.java[m
+[36m@@ -0,0 +1,66 @@[m
+[32m+[m[32mpackage com.codewithdhruv.Task_SpringBoot.controller.auth;[m
+[32m+[m
+[32m+[m[32mimport com.codewithdhruv.Task_SpringBoot.Dto.AuthenticationRequest;[m
+[32m+[m[32mimport com.codewithdhruv.Task_SpringBoot.Dto.AuthenticationResponse;[m
+[32m+[m[32mimport com.codewithdhruv.Task_SpringBoot.Dto.SignupRequest;[m
+[32m+[m[32mimport com.codewithdhruv.Task_SpringBoot.Dto.UserDto;[m
+[32m+[m[32mimport com.codewithdhruv.Task_SpringBoot.entities.User;[m
+[32m+[m[32mimport com.codewithdhruv.Task_SpringBoot.repositories.UserRepository;[m
+[32m+[m[32mimport com.codewithdhruv.Task_SpringBoot.service.auth.AuthService;[m
+[32m+[m[32mimport com.codewithdhruv.Task_SpringBoot.service.jwt.UserService;[m
+[32m+[m[32mimport com.codewithdhruv.Task_SpringBoot.utils.JwtUtil;[m
+[32m+[m[32mimport lombok.RequiredArgsConstructor;[m
+[32m+[m[32mimport org.springframework.http.HttpStatus;[m
+[32m+[m[32mimport org.springframework.http.ResponseEntity;[m
+[32m+[m[32mimport org.springframework.security.authentication.AuthenticationManager;[m
+[32m+[m[32mimport org.springframework.security.authentication.BadCredentialsException;[m
+[32m+[m[32mimport org.springframework.security.authentication.UsernamePasswordAuthenticationToken;[m
+[32m+[m[32mimport org.springframework.security.core.userdetails.UserDetails;[m
+[32m+[m[32mimport org.springframework.web.bind.annotation.*;[m
+[32m+[m
+[32m+[m[32mimport java.util.Optional;[m
+[32m+[m
+[32m+[m[32m@RestController[m
+[32m+[m[32m@RequestMapping("/api/auth")[m
+[32m+[m[32m@RequiredArgsConstructor[m
+[32m+[m[32m@CrossOrigin("*")[m
+[32m+[m[32mpublic class AuthController {[m
+[32m+[m
+[32m+[m[32m    private final AuthService authService;[m
+[32m+[m[32m    private final UserRepository userRepository;[m
+[32m+[m[32m    private final JwtUtil jwtUtil;[m
+[32m+[m[32m    private final UserService userService;[m
+[32m+[m[32m    private final AuthenticationManager authenticationManager;[m
+[32m+[m
+[32m+[m[32m    @PostMapping("/signup")[m
+[32m+[m[32m    public ResponseEntity<?> signUpUser(@RequestBody SignupRequest signupRequest) {[m
+[32m+[m[32m        if(authService.hasUserWithEmail(signupRequest.getEmail())) {[m
+[32m+[m[32m            return ResponseEntity.status(HttpStatus.NOT_ACCEPTABLE).body("User already exist with this email");[m
+[32m+[m[32m        }[m
+[32m+[m[32m        UserDto createdUserDto=authService.signupUser(signupRequest);[m
+[32m+[m[32m        if(createdUserDto==null) {[m
+[32m+[m[32m            return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("User not created");[m
+[32m+[m[32m        }[m
+[32m+[m[32m        return ResponseEntity.status(HttpStatus.CREATED).body(createdUserDto);[m
+[32m+[m[32m    }[m
+[32m+[m
+[32m+[m[32m    @PostMapping("/login")[m
+[32m+[m[32m    public AuthenticationResponse loginUser(@RequestBody AuthenticationRequest authenticationRequest) {[m
+[32m+[m[32m        try{[m
+[32m+[m[32m            authenticationManager.authenticate(new UsernamePasswordAuthenticationToken(authenticationRequest.getEmail(),authenticationRequest.getPassword()));[m
+[32m+[m[32m        } catch (BadCredentialsException e){[m
+[32m+[m[32m            throw new BadCredentialsException("Incorrect username or password");[m
+[32m+[m[32m        }[m
+[32m+[m[32m        final UserDetails userDetails=userService.userDetailsService().loadUserByUsername(authenticationRequest.getEmail());[m
+[32m+[m[32m        Optional<User> optionalUser=userRepository.findFirstByEmail(authenticationRequest.getEmail());[m
+[32m+[m[32m        final String jwtToken=jwtUtil.generateToken(userDetails);[m
+[32m+[m[32m        AuthenticationResponse authenticationResponse=new AuthenticationResponse();[m
+[32m+[m[32m        if(optionalUser.isPresent()){[m
+[32m+[m[32m            authenticationResponse.setJwt(jwtToken);[m
+[32m+[m[32m            authenticationResponse.setUserId(optionalUser.get().getId());[m
+[32m+[m[32m            authenticationResponse.setUserRole(optionalUser.get().getUserRole());[m
+[32m+[m[32m        }[m
+[32m+[m[32m        return authenticationResponse;[m
+[32m+[m[32m    }[m
+[32m+[m
+[32m+[m[32m}[m
+[1mdiff --git a/src/main/java/com/codewithdhruv/Task_SpringBoot/controller/employee/EmployeeController.java b/src/main/java/com/codewithdhruv/Task_SpringBoot/controller/employee/EmployeeController.java[m
+[1mnew file mode 100644[m
+[1mindex 0000000..635f587[m
+[1m--- /dev/null[m
+[1m+++ b/src/main/java/com/codewithdhruv/Task_SpringBoot/controller/employee/EmployeeController.java[m
+[36m@@ -0,0 +1,36 @@[m
+[32m+[m[32mpackage com.codewithdhruv.Task_SpringBoot.controller.employee;[m
+[32m+[m
+[32m+[m[32mimport com.codewithdhruv.Task_SpringBoot.Dto.TaskDTO;[m
+[32m+[m[32mimport com.codewithdhruv.Task_SpringBoot.entities.Task;[m
+[32m+[m[32mimport com.codewithdhruv.Task_SpringBoot.service.employee.EmployeeService;[m
+[32m+[m[32mimport lombok.RequiredArgsConstructor;[m
+[32m+[m[32mimport org.springframework.http.HttpStatus;[m
+[32m+[m[32mimport org.springframework.http.ResponseEntity;[m
+[32m+[m[32mimport org.springframework.web.bind.annotation.*;[m
+[32m+[m
+[32m+[m[32mimport java.util.List;[m
+[32m+[m
+[32m+[m[32m@RestController[m
+[32m+[m[32m@RequestMapping("/api/employee")[m
+[32m+[m[32m@RequiredArgsConstructor[m
+[32m+[m[32m@CrossOrigin("*")[m
+[32m+[m[32mpublic class EmployeeController {[m
+[32m+[m
+[32m+[m[32m    private final EmployeeService employeeService;[m
+[32m+[m
+[32m+[m[32m    @GetMapping("/tasks")[m
+[32m+[m[32m    public ResponseEntity<List<TaskDTO>> getTaskByUserId(){[m
+[32m+[m[32m        return ResponseEntity.ok(employeeService.getTaskByUserId());[m
+[32m+[m
+[32m+[m[32m    }[m
+[32m+[m
+[32m+[m[32m    @PutMapping("/task/{id}/{status}")[m
+[32m+[m[32m    public ResponseEntity<TaskDTO> updateTask(@PathVariable Long id,@PathVariable String status){[m
+[32m+[m[32m        TaskDTO updateTaskDto = employeeService.updateTask(id,status);[m
+[32m+[m[32m        if(updateTaskDto == null){[m
+[32m+[m[32m            return ResponseEntity.status(HttpStatus.BAD_REQUEST).build();[m
+[32m+[m[32m        }[m
+[32m+[m[32m        return ResponseEntity.ok(updateTaskDto);[m
+[32m+[m
+[32m+[m[32m    }[m
+[32m+[m[32m}[m
+[1mdiff --git a/src/main/java/com/codewithdhruv/Task_SpringBoot/entities/Comment.java b/src/main/java/com/codewithdhruv/Task_SpringBoot/entities/Comment.java[m
+[1mnew file mode 100644[m
+[1mindex 0000000..544f83d[m
+[1m--- /dev/null[m
+[1m+++ b/src/main/java/com/codewithdhruv/Task_SpringBoot/entities/Comment.java[m
+[36m@@ -0,0 +1,49 @@[m
+[32m+[m[32mpackage com.codewithdhruv.Task_SpringBoot.entities;[m
+[32m+[m
+[32m+[m
+[32m+[m[32mimport com.codewithdhruv.Task_SpringBoot.Dto.CommentDto;[m
+[32m+[m[32mimport com.fasterxml.jackson.annotation.JsonIgnore;[m
+[32m+[m[32mimport jakarta.persistence.*;[m
+[32m+[m[32mimport lombok.Data;[m
+[32m+[m[32mimport org.hibernate.annotations.OnDelete;[m
+[32m+[m[32mimport org.hibernate.annotations.OnDeleteAction;[m
+[32m+[m
+[32m+[m[32mimport java.util.Date;[m
+[32m+[m
+[32m+[m[32m@Entity[m
+[32m+[m[32m@Data[m
+[32m+[m[32mpublic class Comment {[m
+[32m+[m
+[32m+[m[32m    @Id[m
+[32m+[m[32m    @GeneratedValue(strategy =  GenerationType.IDENTITY)[m
+[32m+[m[32m    private Long id;[m
+[32m+[m
+[32m+[m[32m    private String content;[m
+[32m+[m
+[32m+[m[32m    private Date createdAt;[m
+[32m+[m
+[32m+[m[32m    @ManyToOne(fetch =  FetchType.LAZY ,optional = false)[m
+[32m+[m[32m    @JoinColumn(name="user_id" , nullable = false)[m
+[32m+[m[32m    @OnDelete(action = OnDeleteAction.CASCADE)[m
+[32m+[m[32m    @JsonIgnore[m
+[32m+[m[32m    private User user;[m
+[32m+[m
+[32m+[m[32m    @ManyToOne(fetch =  FetchType.LAZY ,optional = false)[m
+[32m+[m[32m    @JoinColumn(name="task_id" , nullable = false)[m
+[32m+[m[32m    @OnDelete(action = OnDeleteAction.CASCADE)[m
+[32m+[m[32m    @JsonIgnore[m
+[32m+[m[32m    private Task task;[m
+[32m+[m
+[32m+[m[32m    public CommentDto getCommentDTO(){[m
+[32m+[m[32m        CommentDto commentDto = new CommentDto();[m
+[32m+[m[32m        commentDto.setId(id);[m
+[32m+[m[32m        commentDto.setContent(content);[m
+[32m+[m[32m        commentDto.setCreatedAt(createdAt);[m
+[32m+[m[32m        commentDto.setTaskId(task.getId());[m
+[32m+[m[32m        commentDto.setPostedBy(user.getName());[m
+[32m+[m[32m        return commentDto;[m
+[32m+[m
+[32m+[m[32m    }[m
+[32m+[m
+[32m+[m
+[32m+[m[32m}[m
+[1mdiff --git a/src/main/java/com/codewithdhruv/Task_SpringBoot/entities/Task.java b/src/main/java/com/codewithdhruv/Task_SpringBoot/entities/Task.java[m
+[1mnew file mode 100644[m
+[1mindex 0000000..a1f1fbd[m
+[1m--- /dev/null[m
+[1m+++ b/src/main/java/com/codewithdhruv/Task_SpringBoot/entities/Task.java[m
+[36m@@ -0,0 +1,49 @@[m
+[32m+[m[32mpackage com.codewithdhruv.Task_SpringBoot.entities;[m
+[32m+[m
+[32m+[m[32mimport com.codewithdhruv.Task_SpringBoot.Dto.TaskDTO;[m
+[32m+[m[32mimport com.codewithdhruv.Task_SpringBoot.enums.TaskStatus;[m
+[32m+[m[32mimport com.fasterxml.jackson.annotation.JsonIgnore;[m
+[32m+[m[32mimport jakarta.persistence.*;[m
+[32m+[m[32mimport lombok.Data;[m
+[32m+[m[32mimport org.hibernate.annotations.OnDelete;[m
+[32m+[m[32mimport org.hibernate.annotations.OnDeleteAction;[m
+[32m+[m
+[32m+[m[32mimport java.util.Date;[m
+[32m+[m
+[32m+[m[32m@Entity[m
+[32m+[m[32m@Data[m
+[32m+[m[32mpublic class Task {[m
+[32m+[m
+[32m+[m[32m    @Id[m
+[32m+[m[32m    @GeneratedValue(strategy = GenerationType.IDENTITY)[m
+[32m+[m[32m    private Long id;[m
+[32m+[m
+[32m+[m[32m    private String title;[m
+[32m+[m
+[32m+[m[32m    private String description;[m
+[32m+[m
+[32m+[m[32m    private Date dueDate;[m
+[32m+[m
+[32m+[m[32m    private String priority;[m
+[32m+[m
+[32m+[m[32m    private TaskStatus taskStatus;[m
+[32m+[m
+[32m+[m[32m    @ManyToOne(fetch = FetchType.LAZY, optional = false)[m
+[32m+[m[32m    @JoinColumn(name = "user_id", nullable = false)[m
+[32m+[m[32m    @OnDelete(action =  OnDeleteAction.CASCADE)[m
+[32m+[m[32m    @JsonIgnore[m
+[32m+[m[32m    private User user;[m
+[32m+[m
+[32m+[m[32m    public TaskDTO getTaskDTO() {[m
+[32m+[m[32m        TaskDTO taskDTO = new TaskDTO();[m
+[32m+[m[32m        taskDTO.setId(id);[m
+[32m+[m[32m        taskDTO.setTitle(title);[m
+[32m+[m[32m        taskDTO.setDescription(description);[m
+[32m+[m[32m        taskDTO.setEmployeeName(user.getName());[m
+[32m+[m[32m        taskDTO.setEmployeeId(user.getId());[m
+[32m+[m[32m        taskDTO.setTaskStatus(taskStatus);[m
+[32m+[m[32m        taskDTO.setDueDate(dueDate);[m
+[32m+[m[32m        taskDTO.setPriority(priority);[m
+[32m+[m[32m        return taskDTO;[m
+[32m+[m[32m    }[m
+[32m+[m[32m}[m
+[1mdiff --git a/src/main/java/com/codewithdhruv/Task_SpringBoot/entities/User.java b/src/main/java/com/codewithdhruv/Task_SpringBoot/entities/User.java[m
+[1mnew file mode 100644[m
+[1mindex 0000000..0b0b32e[m
+[1m--- /dev/null[m
+[1m+++ b/src/main/java/com/codewithdhruv/Task_SpringBoot/entities/User.java[m
+[36m@@ -0,0 +1,69 @@[m
+[32m+[m[32mpackage com.codewithdhruv.Task_SpringBoot.entities;[m
+[32m+[m
+[32m+[m[32mimport com.codewithdhruv.Task_SpringBoot.Dto.UserDto;[m
+[32m+[m[32mimport com.codewithdhruv.Task_SpringBoot.enums.UserRole;[m
+[32m+[m[32mimport jakarta.persistence.Entity;[m
+[32m+[m[32mimport jakarta.persistence.GeneratedValue;[m
+[32m+[m[32mimport jakarta.persistence.GenerationType;[m
+[32m+[m[32mimport jakarta.persistence.Id;[m
+[32m+[m[32mimport lombok.Data;[m
+[32m+[m[32mimport org.springframework.security.core.GrantedAuthority;[m
+[32m+[m[32mimport org.springframework.security.core.authority.SimpleGrantedAuthority;[m
+[32m+[m[32mimport org.springframework.security.core.userdetails.UserDetails;[m
+[32m+[m
+[32m+[m[32mimport java.util.Collection;[m
+[32m+[m[32mimport java.util.List;[m
+[32m+[m
+[32m+[m[32m@Data[m
+[32m+[m[32m@Entity[m
+[32m+[m[32mpublic class User implements UserDetails {[m
+[32m+[m
+[32m+[m[32m    @Id[m
+[32m+[m[32m    @GeneratedValue(strategy = GenerationType.IDENTITY)[m
+[32m+[m[32m    private Long id;[m
+[32m+[m
+[32m+[m[32m    private String name;[m
+[32m+[m[32m    private String email;[m
+[32m+[m[32m    private String password;[m
+[32m+[m
+[32m+[m[32m    private UserRole userRole;[m
+[32m+[m
+[32m+[m[32m    @Override[m
+[32m+[m[32m    public Collection<? extends GrantedAuthority> getAuthorities() {[m
+[32m+[m[32m        return List.of(new SimpleGrantedAuthority(userRole.name()));[m
+[32m+[m[32m    }[m
+[32m+[m
+[32m+[m[32m    @Override[m
+[32m+[m[32m    public String getUsername() {[m
+[32m+[m[32m        return email;[m
+[32m+[m[32m    }[m
+[32m+[m
+[32m+[m[32m    @Override[m
+[32m+[m[32m    public boolean isAccountNonExpired() {[m
+[32m+[m[32m        return true;[m
+[32m+[m[32m    }[m
+[32m+[m
+[32m+[m[32m    @Override[m
+[32m+[m[32m    public boolean isAccountNonLocked() {[m
+[32m+[m[32m        return true;[m
+[32m+[m[32m    }[m
+[32m+[m
+[32m+[m[32m    @Override[m
+[32m+[m[32m    public boolean isCredentialsNonExpired() {[m
+[32m+[m[32m        return true;[m
+[32m+[m[32m    }[m
+[32m+[m
+[32m+[m[32m    @Override[m
+[32m+[m[32m    public boolean isEnabled() {[m
+[32m+[m[32m        return true;[m
+[32m+[m[32m    }[m
+[32m+[m
+[32m+[m[32m    public UserDto getUserDto() {[m
+[32m+[m[32m        UserDto userDto=new UserDto();[m
+[32m+[m[32m        userDto.setId(id);[m
+[32m+[m[32m        userDto.setName(name);[m
+[32m+[m[32m        userDto.setEmail(email);[m
+[32m+[m[32m        userDto.setUserRole(userRole);[m
+[32m+[m[32m        return userDto;[m
+[32m+[m[32m    }[m
+[32m+[m[32m}[m
+[1mdiff --git a/src/main/java/com/codewithdhruv/Task_SpringBoot/enums/TaskStatus.java b/src/main/java/com/codewithdhruv/Task_SpringBoot/enums/TaskStatus.java[m
+[1mnew file mode 100644[m
+[1mindex 0000000..bcec59c[m
+[1m--- /dev/null[m
+[1m+++ b/src/main/java/com/codewithdhruv/Task_SpringBoot/enums/TaskStatus.java[m
+[36m@@ -0,0 +1,10 @@[m
+[32m+[m[32mpackage com.codewithdhruv.Task_SpringBoot.enums;[m
+[32m+[m
+[32m+[m[32mpublic enum TaskStatus {[m
+[32m+[m
+[32m+[m[32m    PENDING,[m
+[32m+[m[32m    INPROGRESS,[m
+[32m+[m[32m    COMPLETED,[m
+[32m+[m[32m    DEFERRED,[m
+[32m+[m[32m    CANCELLED[m
+[32m+[m[32m}[m
+[1mdiff --git a/src/main/java/com/codewithdhruv/Task_SpringBoot/enums/UserRole.java b/src/main/java/com/codewithdhruv/Task_SpringBoot/enums/UserRole.java[m
+[1mnew file mode 100644[m
+[1mindex 0000000..c522e38[m
+[1m--- /dev/null[m
+[1m+++ b/src/main/java/com/codewithdhruv/Task_SpringBoot/enums/UserRole.java[m
+[36m@@ -0,0 +1,6 @@[m
+[32m+[m[32mpackage com.codewithdhruv.Task_SpringBoot.enums;[m
+[32m+[m
+[32m+[m[32mpublic enum UserRole {[m
+[32m+[m
+[32m+[m[32m    ADMIN, EMPLOYEE[m
+[32m+[m[32m}[m
+[1mdiff --git a/src/main/java/com/codewithdhruv/Task_SpringBoot/repositories/CommentRepository.java b/src/main/java/com/codewithdhruv/Task_SpringBoot/repositories/CommentRepository.java[m
+[1mnew file mode 100644[m
+[1mindex 0000000..a710bd7[m
+[1m--- /dev/null[m
+[1m+++ b/src/main/java/com/codewithdhruv/Task_SpringBoot/repositories/CommentRepository.java[m
+[36m@@ -0,0 +1,15 @@[m
+[32m+[m[32mpackage com.codewithdhruv.Task_SpringBoot.repositories;[m
+[32m+[m
+[32m+[m[32mimport com.codewithdhruv.Task_SpringBoot.Dto.CommentDto;[m
+[32m+[m[32mimport com.codewithdhruv.Task_SpringBoot.entities.Comment;[m
+[32m+[m[32mimport com.codewithdhruv.Task_SpringBoot.entities.Task;[m
+[32m+[m[32mimport org.springframework.data.jpa.repository.JpaRepository;[m
+[32m+[m[32mimport org.springframework.stereotype.Repository;[m
+[32m+[m
+[32m+[m[32mimport java.util.List;[m
+[32m+[m
+[32m+[m[32m@Repository[m
+[32m+[m[32mpublic interface CommentRepository extends JpaRepository<Comment, Long> {[m
+[32m+[m
+[32m+[m[32m    List<Comment> findAllByTaskId(Long taskId);[m
+[32m+[m[32m}[m
+[1mdiff --git a/src/main/java/com/codewithdhruv/Task_SpringBoot/repositories/TaskRepository.java b/src/main/java/com/codewithdhruv/Task_SpringBoot/repositories/TaskRepository.java[m
+[1mnew file mode 100644[m
+[1mindex 0000000..78f2448[m
+[1m--- /dev/null[m
+[1m+++ b/src/main/java/com/codewithdhruv/Task_SpringBoot/repositories/TaskRepository.java[m
+[36m@@ -0,0 +1,15 @@[m
+[32m+[m[32mpackage com.codewithdhruv.Task_SpringBoot.repositories;[m
+[32m+[m
+[32m+[m[32mimport com.codewithdhruv.Task_SpringBoot.Dto.TaskDTO;[m
+[32m+[m[32mimport com.codewithdhruv.Task_SpringBoot.entities.Task;[m
+[32m+[m[32mimport org.springframework.data.jpa.repository.JpaRepository;[m
+[32m+[m[32mimport org.springframework.stereotype.Repository;[m
+[32m+[m
+[32m+[m[32mimport java.util.List;[m
+[32m+[m
+[32m+[m[32m@Repository[m
+[32m+[m[32mpublic interface TaskRepository extends JpaRepository<Task,Long> {[m
+[32m+[m[32m    List<Task> findAllByTitleContaining(String title);[m
+[32m+[m
+[32m+[m[32m    List<Task> findAllByUserId(Long id);[m
+[32m+[m[32m}[m
+[1mdiff --git a/src/main/java/com/codewithdhruv/Task_SpringBoot/repositories/UserRepository.java b/src/main/java/com/codewithdhruv/Task_SpringBoot/repositories/UserRepository.java[m
+[1mnew file mode 100644[m
+[1mindex 0000000..c4fe21d[m
+[1m--- /dev/null[m
+[1m+++ b/src/main/java/com/codewithdhruv/Task_SpringBoot/repositories/UserRepository.java[m
+[36m@@ -0,0 +1,17 @@[m
+[32m+[m[32mpackage com.codewithdhruv.Task_SpringBoot.repositories;[m
+[32m+[m
+[32m+[m[32mimport com.codewithdhruv.Task_SpringBoot.entities.User;[m
+[32m+[m[32mimport com.codewithdhruv.Task_SpringBoot.enums.UserRole;[m
+[32m+[m[32mimport org.springframework.data.jpa.repository.JpaRepository;[m
+[32m+[m[32mimport org.springframework.security.core.userdetails.UserDetails;[m
+[32m+[m[32mimport org.springframework.stereotype.Repository;[m
+[32m+[m
+[32m+[m[32mimport java.util.Optional;[m
+[32m+[m
+[32m+[m[32m@Repository[m
+[32m+[m[32mpublic interface UserRepository extends JpaRepository<User,Long> {[m
+[32m+[m
+[32m+[m[32m    Optional<User> findFirstByEmail(String username);[m
+[32m+[m
+[32m+[m[32m    Optional<User> findByUserRole(UserRole admin);[m
+[32m+[m[32m}[m
+[1mdiff --git a/src/main/java/com/codewithdhruv/Task_SpringBoot/service/admin/AdminService.java b/src/main/java/com/codewithdhruv/Task_SpringBoot/service/admin/AdminService.java[m
+[1mnew file mode 100644[m
+[1mindex 0000000..3489d2a[m
+[1m--- /dev/null[m
+[1m+++ b/src/main/java/com/codewithdhruv/Task_SpringBoot/service/admin/AdminService.java[m
+[36m@@ -0,0 +1,28 @@[m
+[32m+[m[32mpackage com.codewithdhruv.Task_SpringBoot.service.admin;[m
+[32m+[m
+[32m+[m[32mimport com.codewithdhruv.Task_SpringBoot.Dto.CommentDto;[m
+[32m+[m[32mimport com.codewithdhruv.Task_SpringBoot.Dto.TaskDTO;[m
+[32m+[m[32mimport com.codewithdhruv.Task_SpringBoot.Dto.UserDto;[m
+[32m+[m
+[32m+[m[32mimport java.util.List;[m
+[32m+[m
+[32m+[m[32mpublic interface AdminService {[m
+[32m+[m
+[32m+[m[32m    List<UserDto> getUsers();[m
+[32m+[m
+[32m+[m[32m    TaskDTO createTask(TaskDTO taskDTO);[m
+[32m+[m
+[32m+[m[32m    List<TaskDTO> getAllTasks();[m
+[32m+[m
+[32m+[m[32m    void deleteTask(Long id);[m
+[32m+[m
+[32m+[m[32m    TaskDTO getTaskById(Long id);[m
+[32m+[m
+[32m+[m[32m    TaskDTO updateTask(Long id,TaskDTO taskDTO);[m
+[32m+[m
+[32m+[m[32m    List<TaskDTO> searchTaskByTitle(String title);[m
+[32m+[m
+[32m+[m[32m    CommentDto createComment(Long taskId,String content);[m
+[32m+[m
+[32m+[m[32m    List<CommentDto> getCommentsByTaskId(Long taskId);[m
+[32m+[m[32m}[m
+[1mdiff --git a/src/main/java/com/codewithdhruv/Task_SpringBoot/service/admin/AdminServiceImpl.java b/src/main/java/com/codewithdhruv/Task_SpringBoot/service/admin/AdminServiceImpl.java[m
+[1mnew file mode 100644[m
+[1mindex 0000000..9aafbbd[m
+[1m--- /dev/null[m
+[1m+++ b/src/main/java/com/codewithdhruv/Task_SpringBoot/service/admin/AdminServiceImpl.java[m
+[36m@@ -0,0 +1,146 @@[m
+[32m+[m[32mpackage com.codewithdhruv.Task_SpringBoot.service.admin;[m
+[32m+[m
+[32m+[m[32mimport com.codewithdhruv.Task_SpringBoot.Dto.CommentDto;[m
+[32m+[m[32mimport com.codewithdhruv.Task_SpringBoot.Dto.TaskDTO;[m
+[32m+[m[32mimport com.codewithdhruv.Task_SpringBoot.Dto.UserDto;[m
+[32m+[m[32mimport com.codewithdhruv.Task_SpringBoot.entities.Comment;[m
+[32m+[m[32mimport com.codewithdhruv.Task_SpringBoot.entities.Task;[m
+[32m+[m[32mimport com.codewithdhruv.Task_SpringBoot.entities.User;[m
+[32m+[m[32mimport com.codewithdhruv.Task_SpringBoot.enums.TaskStatus;[m
+[32m+[m[32mimport com.codewithdhruv.Task_SpringBoot.enums.UserRole;[m
+[32m+[m[32mimport com.codewithdhruv.Task_SpringBoot.repositories.CommentRepository;[m
+[32m+[m[32mimport com.codewithdhruv.Task_SpringBoot.repositories.TaskRepository;[m
+[32m+[m[32mimport com.codewithdhruv.Task_SpringBoot.repositories.UserRepository;[m
+[32m+[m[32mimport com.codewithdhruv.Task_SpringBoot.utils.JwtUtil;[m
+[32m+[m[32mimport jakarta.persistence.EntityNotFoundException;[m
+[32m+[m[32mimport lombok.RequiredArgsConstructor;[m
+[32m+[m[32mimport org.springframework.http.ResponseEntity;[m
+[32m+[m[32mimport org.springframework.stereotype.Service;[m
+[32m+[m[32mimport org.springframework.web.bind.annotation.PathVariable;[m
+[32m+[m
+[32m+[m[32mimport java.util.Comparator;[m
+[32m+[m[32mimport java.util.Date;[m
+[32m+[m[32mimport java.util.List;[m
+[32m+[m[32mimport java.util.Optional;[m
+[32m+[m[32mimport java.util.stream.Collectors;[m
+[32m+[m
+[32m+[m[32m@Service[m
+[32m+[m[32m@RequiredArgsConstructor[m
+[32m+[m[32mpublic class AdminServiceImpl implements AdminService{[m
+[32m+[m
+[32m+[m[32m    private final UserRepository userRepository;[m
+[32m+[m[32m    private final TaskRepository taskRepository;[m
+[32m+[m[32m    private final CommentRepository commentRepository;[m
+[32m+[m[32m    private final JwtUtil jwtUtil;[m
+[32m+[m
+[32m+[m
+[32m+[m[32m    @Override[m
+[32m+[m[32m    public List<UserDto> getUsers() {[m
+[32m+[m[32m        return userRepository.findAll()[m
+[32m+[m[32m                .stream()[m
+[32m+[m[32m                .filter(user->user.getUserRole()== UserRole.EMPLOYEE)[m
+[32m+[m[32m                .map(User::getUserDto)[m
+[32m+[m[32m                .collect(Collectors.toList());[m
+[32m+[m[32m    }[m
+[32m+[m
+[32m+[m[32m    @Override[m
+[32m+[m[32m    public TaskDTO createTask(TaskDTO taskDTO) {[m
+[32m+[m[32m        Optional<User> optionalUser = userRepository.findById(taskDTO.getEmployeeId());[m
+[32m+[m[32m        if(optionalUser.isPresent()) {[m
+[32m+[m[32m            Task task = new Task();[m
+[32m+[m[32m            task.setTitle(taskDTO.getTitle());[m
+[32m+[m[32m            task.setDescription(taskDTO.getDescription());[m
+[32m+[m[32m            task.setPriority(taskDTO.getPriority());[m
+[32m+[m[32m            task.setDueDate(taskDTO.getDueDate());[m
+[32m+[m[32m            task.setTaskStatus(TaskStatus.INPROGRESS);[m
+[32m+[m[32m            task.setUser(optionalUser.get());[m
+[32m+[m[32m            return taskRepository.save(task).getTaskDTO();[m
+[32m+[m[32m        }[m
+[32m+[m[32m        return null;[m
+[32m+[m[32m    }[m
+[32m+[m
+[32m+[m
+[32m+[m[32m    public List<TaskDTO> getAllTasks() {[m
+[32m+[m[32m         return taskRepository.findAll()[m
+[32m+[m[32m                 .stream()[m
+[32m+[m[32m                 .sorted(Comparator.comparing(Task::getDueDate).reversed())[m
+[32m+[m[32m                 .map(Task::getTaskDTO)[m
+[32m+[m[32m                 .collect(Collectors.toList());[m
+[32m+[m[32m    }[m
+[32m+[m
+[32m+[m
+[32m+[m[32m    public void deleteTask(Long id) {[m
+[32m+[m[32m        if (!taskRepository.existsById(id)) {[m
+[32m+[m[32m            throw new RuntimeException("Task with ID " + id + " not found");[m
+[32m+[m[32m        }[m
+[32m+[m[32m        taskRepository.deleteById(id);[m
+[32m+[m[32m    }[m
+[32m+[m
+[32m+[m[32m    @Override[m
+[32m+[m[32m    public TaskDTO getTaskById(Long id) {[m
+[32m+[m[32m        Optional<Task> optionalTask =taskRepository.findById(id);[m
+[32m+[m[32m        return optionalTask.map(Task::getTaskDTO).orElse(null);[m
+[32m+[m[32m    }[m
+[32m+[m
+[32m+[m[32m    @Override[m
+[32m+[m[32m    public TaskDTO updateTask(Long id, TaskDTO taskDTO) {[m
+[32m+[m[32m        Optional<Task> optionalTask = taskRepository.findById(id);[m
+[32m+[m[32m        Optional<User> optionalUser = userRepository.findById(taskDTO.getEmployeeId());[m
+[32m+[m[32m        if(optionalTask.isPresent() && optionalUser.isPresent()) {[m
+[32m+[m[32m            Task existingTask = optionalTask.get();[m
+[32m+[m[32m            existingTask.setTitle(taskDTO.getTitle());[m
+[32m+[m[32m            existingTask.setDescription(taskDTO.getDescription());[m
+[32m+[m[32m            existingTask.setDueDate(taskDTO.getDueDate());[m
+[32m+[m[32m            existingTask.setPriority(taskDTO.getPriority());[m
+[32m+[m[32m            existingTask.setTaskStatus(mapStringToTaskStatus(String.valueOf(taskDTO.getTaskStatus())));[m
+[32m+[m[32m            return taskRepository.save(existingTask).getTaskDTO();[m
+[32m+[m[32m        }[m
+[32m+[m[32m        return null;[m
+[32m+[m[32m    }[m
+[32m+[m
+[32m+[m[32m    @Override[m
+[32m+[m[32m    public List<TaskDTO> searchTaskByTitle(String title) {[m
+[32m+[m[32m         return taskRepository.findAllByTitleContaining(title)[m
+[32m+[m[32m                 .stream()[m
+[32m+[m[32m                 .sorted(Comparator.comparing(Task::getDueDate).reversed())[m
+[32m+[m[32m                 .map(Task::getTaskDTO)[m
+[32m+[m[32m                 .collect(Collectors.toList());[m
+[32m+[m[32m    }[m
+[32m+[m
+[32m+[m[32m    @Override[m
+[32m+[m[32m    public CommentDto createComment(Long taskId, String content) {[m
+[32m+[m[32m        Optional<Task> optionalTask = taskRepository.findById(taskId);[m
+[32m+[m[32m        User user = jwtUtil.getLoggedInUser();[m
+[32m+[m[32m        if((optionalTask.isPresent()) && user!=null){[m
+[32m+[m[32m            Comment comment = new Comment();[m
+[32m+[m[32m            comment.setCreatedAt((new Date()));[m
+[32m+[m[32m            comment.setContent(content);[m
+[32m+[m[32m            comment.setTask(optionalTask.get());[m
+[32m+[m[32m            comment.setUser(user);[m
+[32m+[m[32m            return commentRepository.save(comment).getCommentDTO();[m
+[32m+[m
+[32m+[m[32m        }[m
+[32m+[m[32m        throw new EntityNotFoundException("User or task not found");[m
+[32m+[m[32m    }[m
+[32m+[m
+[32m+[m[32m    @Override[m
+[32m+[m[32m    public List<CommentDto> getCommentsByTaskId(Long taskId) {[m
+[32m+[m[32m        return commentRepository.findAllByTaskId(taskId)[m
+[32m+[m[32m                .stream()[m
+[32m+[m[32m                .map(Comment::getCommentDTO)[m
+[32m+[m[32m                .collect(Collectors.toList());[m
+[32m+[m[32m    }[m
+[32m+[m
+[32m+[m[32m    private TaskStatus mapStringToTaskStatus(String status) {[m
+[32m+[m[32m        return switch (status){[m
+[32m+[m[32m            case "PENDING" -> TaskStatus.PENDING;[m
+[32m+[m[32m            case "INPROGRESS" -> TaskStatus.INPROGRESS;[m
+[32m+[m[32m            case "COMPLETED" -> TaskStatus.COMPLETED;[m
+[32m+[m[32m            case "DEFERRED" -> TaskStatus.DEFERRED;[m
+[32m+[m[32m            default -> TaskStatus.CANCELLED;[m
+[32m+[m[32m        };[m
+[32m+[m[32m    }[m
+[32m+[m
+[32m+[m
+[32m+[m
+[32m+[m[32m}[m
+[1mdiff --git a/src/main/java/com/codewithdhruv/Task_SpringBoot/service/auth/AuthService.java b/src/main/java/com/codewithdhruv/Task_SpringBoot/service/auth/AuthService.java[m
+[1mnew file mode 100644[m
+[1mindex 0000000..c439a8f[m
+[1m--- /dev/null[m
+[1m+++ b/src/main/java/com/codewithdhruv/Task_SpringBoot/service/auth/AuthService.java[m
+[36m@@ -0,0 +1,10 @@[m
+[32m+[m[32mpackage com.codewithdhruv.Task_SpringBoot.service.auth;[m
+[32m+[m
+[32m+[m[32mimport com.codewithdhruv.Task_SpringBoot.Dto.SignupRequest;[m
+[32m+[m[32mimport com.codewithdhruv.Task_SpringBoot.Dto.UserDto;[m
+[32m+[m
+[32m+[m[32mpublic interface AuthService {[m
+[32m+[m
+[32m+[m[32m    UserDto signupUser(SignupRequest request);[m
+[32m+[m[32m    boolean hasUserWithEmail(String email);[m
+[32m+[m[32m}[m
+[1mdiff --git a/src/main/java/com/codewithdhruv/Task_SpringBoot/service/auth/AuthServiceImpl.java b/src/main/java/com/codewithdhruv/Task_SpringBoot/service/auth/AuthServiceImpl.java[m
+[1mnew file mode 100644[m
+[1mindex 0000000..0f5b3a6[m
+[1m--- /dev/null[m
+[1m+++ b/src/main/java/com/codewithdhruv/Task_SpringBoot/service/auth/AuthServiceImpl.java[m
+[36m@@ -0,0 +1,52 @@[m
+[32m+[m[32mpackage com.codewithdhruv.Task_SpringBoot.service.auth;[m
+[32m+[m
+[32m+[m[32mimport com.codewithdhruv.Task_SpringBoot.Dto.SignupRequest;[m
+[32m+[m[32mimport com.codewithdhruv.Task_SpringBoot.Dto.UserDto;[m
+[32m+[m[32mimport com.codewithdhruv.Task_SpringBoot.entities.User;[m
+[32m+[m[32mimport com.codewithdhruv.Task_SpringBoot.enums.UserRole;[m
+[32m+[m[32mimport com.codewithdhruv.Task_SpringBoot.repositories.UserRepository;[m
+[32m+[m[32mimport jakarta.annotation.PostConstruct;[m
+[32m+[m[32mimport lombok.RequiredArgsConstructor;[m
+[32m+[m[32mimport org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;[m
+[32m+[m[32mimport org.springframework.stereotype.Service;[m
+[32m+[m
+[32m+[m[32mimport java.util.Optional;[m
+[32m+[m
+[32m+[m[32m@Service[m
+[32m+[m[32m@RequiredArgsConstructor[m
+[32m+[m[32mpublic class AuthServiceImpl implements AuthService {[m
+[32m+[m
+[32m+[m[32m    private final UserRepository userRepository;[m
+[32m+[m
+[32m+[m[32m    @PostConstruct[m
+[32m+[m[32m    public void createAdminAccount(){[m
+[32m+[m[32m        Optional<User> optionalUser=userRepository.findByUserRole(UserRole.ADMIN);[m
+[32m+[m[32m        if(optionalUser.isEmpty()) {[m
+[32m+[m[32m            User user=new User();[m
+[32m+[m[32m            user.setEmail("admin@test.com");[m
+[32m+[m[32m            user.setName("Admin");[m
+[32m+[m[32m            user.setPassword(new BCryptPasswordEncoder().encode("admin1"));[m
+[32m+[m[32m            user.setUserRole(UserRole.ADMIN);[m
+[32m+[m[32m            userRepository.save(user);[m
+[32m+[m[32m            System.out.println("Admin account created successfully");[m
+[32m+[m[32m        } else {[m
+[32m+[m[32m            System.out.println("Admin account already exist!");[m
+[32m+[m[32m        }[m
+[32m+[m[32m    }[m
+[32m+[m
+[32m+[m[32m    @Override[m
+[32m+[m[32m    public UserDto signupUser(SignupRequest request) {[m
+[32m+[m[32m        User user=new User();[m
+[32m+[m[32m        user.setEmail(request.getEmail());[m
+[32m+[m[32m        user.setName(request.getName());[m
+[32m+[m[32m        user.setPassword(new BCryptPasswordEncoder().encode(request.getPassword()));[m
+[32m+[m[32m        user.setUserRole(UserRole.EMPLOYEE);[m
+[32m+[m[32m        User createdUser=userRepository.save(user);[m
+[32m+[m[32m        return createdUser.getUserDto();[m
+[32m+[m[32m    }[m
+[32m+[m
+[32m+[m[32m    @Override[m
+[32m+[m[32m    public boolean hasUserWithEmail(String email) {[m
+[32m+[m[32m        return userRepository.findFirstByEmail(email).isPresent();[m
+[32m+[m[32m    }[m
+[32m+[m[32m}[m
+[1mdiff --git a/src/main/java/com/codewithdhruv/Task_SpringBoot/service/employee/EmployeeService.java b/src/main/java/com/codewithdhruv/Task_SpringBoot/service/employee/EmployeeService.java[m
+[1mnew file mode 100644[m
+[1mindex 0000000..7970a0c[m
+[1m--- /dev/null[m
+[1m+++ b/src/main/java/com/codewithdhruv/Task_SpringBoot/service/employee/EmployeeService.java[m
+[36m@@ -0,0 +1,12 @@[m
+[32m+[m[32mpackage com.codewithdhruv.Task_SpringBoot.service.employee;[m
+[32m+[m
+[32m+[m[32mimport com.codewithdhruv.Task_SpringBoot.Dto.TaskDTO;[m
+[32m+[m
+[32m+[m[32mimport java.util.List;[m
+[32m+[m
+[32m+[m[32mpublic interface EmployeeService {[m
+[32m+[m
+[32m+[m[32m    List<TaskDTO> getTaskByUserId();[m
+[32m+[m
+[32m+[m[32m    TaskDTO updateTask(Long id,String status);[m
+[32m+[m[32m}[m
+[1mdiff --git a/src/main/java/com/codewithdhruv/Task_SpringBoot/service/employee/EmployeeServiceImpl.java b/src/main/java/com/codewithdhruv/Task_SpringBoot/service/employee/EmployeeServiceImpl.java[m
+[1mnew file mode 100644[m
+[1mindex 0000000..e5fddd3[m
+[1m--- /dev/null[m
+[1m+++ b/src/main/java/com/codewithdhruv/Task_SpringBoot/service/employee/EmployeeServiceImpl.java[m
+[36m@@ -0,0 +1,58 @@[m
+[32m+[m[32mpackage com.codewithdhruv.Task_SpringBoot.service.employee;[m
+[32m+[m
+[32m+[m[32mimport com.codewithdhruv.Task_SpringBoot.Dto.TaskDTO;[m
+[32m+[m[32mimport com.codewithdhruv.Task_SpringBoot.entities.Task;[m
+[32m+[m[32mimport com.codewithdhruv.Task_SpringBoot.entities.User;[m
+[32m+[m[32mimport com.codewithdhruv.Task_SpringBoot.enums.TaskStatus;[m
+[32m+[m[32mimport com.codewithdhruv.Task_SpringBoot.repositories.TaskRepository;[m
+[32m+[m[32mimport com.codewithdhruv.Task_SpringBoot.utils.JwtUtil;[m
+[32m+[m[32mimport jakarta.persistence.EntityNotFoundException;[m
+[32m+[m[32mimport lombok.RequiredArgsConstructor;[m
+[32m+[m[32mimport org.springframework.stereotype.Service;[m
+[32m+[m
+[32m+[m[32mimport java.util.Comparator;[m
+[32m+[m[32mimport java.util.List;[m
+[32m+[m[32mimport java.util.Optional;[m
+[32m+[m[32mimport java.util.stream.Collectors;[m
+[32m+[m
+[32m+[m[32m@Service[m
+[32m+[m[32m@RequiredArgsConstructor[m
+[32m+[m[32mpublic class EmployeeServiceImpl implements EmployeeService {[m
+[32m+[m
+[32m+[m[32m    private final TaskRepository taskRepository;[m
+[32m+[m[32m    private final JwtUtil jwtUtil;[m
+[32m+[m
+[32m+[m
+[32m+[m[32m    public List<TaskDTO> getTaskByUserId() {[m
+[32m+[m[32m        User user = jwtUtil.getLoggedInUser();[m
+[32m+[m
+[32m+[m[32m        if (user == null) {[m
+[32m+[m[32m            throw new EntityNotFoundException("User not found");[m
+[32m+[m[32m        }[m
+[32m+[m
+[32m+[m[32m        return taskRepository.findAllByUserId(user.getId())[m
+[32m+[m[32m                .stream()[m
+[32m+[m[32m                .sorted(Comparator.comparing(Task::getDueDate).reversed())[m
+[32m+[m[32m                .map(Task::getTaskDTO)[m
+[32m+[m[32m                .collect(Collectors.toList());[m
+[32m+[m[32m    }[m
+[32m+[m[32m    private TaskStatus mapStringToTaskStatus(String status) {[m
+[32m+[m[32m        return switch (status){[m
+[32m+[m[32m            case "PENDING" -> TaskStatus.PENDING;[m
+[32m+[m[32m            case "INPROGRESS" -> TaskStatus.INPROGRESS;[m
+[32m+[m[32m            case "COMPLETED" -> TaskStatus.COMPLETED;[m
+[32m+[m[32m            case "DEFERRED" -> TaskStatus.DEFERRED;[m
+[32m+[m[32m            default -> TaskStatus.CANCELLED;[m
+[32m+[m[32m        };[m
+[32m+[m[32m    }[m
+[32m+[m[32m    @Override[m
+[32m+[m[32m    public TaskDTO updateTask(Long id, String status) {[m
+[32m+[m[32m        Optional<Task> optionalTask = taskRepository.findById(id);[m
+[32m+[m[32m        if(optionalTask.isPresent()){[m
+[32m+[m[32m            Task existingTask =  optionalTask.get();[m
+[32m+[m[32m            existingTask.setTaskStatus(mapStringToTaskStatus(status));[m
+[32m+[m[32m            return taskRepository.save(existingTask).getTaskDTO();[m
+[32m+[m[32m        }[m
+[32m+[m[32m        throw new EntityNotFoundException("Task not found");[m
+[32m+[m[32m    }[m
+[32m+[m[32m}[m
+[1mdiff --git a/src/main/java/com/codewithdhruv/Task_SpringBoot/service/jwt/UserService.java b/src/main/java/com/codewithdhruv/Task_SpringBoot/service/jwt/UserService.java[m
+[1mnew file mode 100644[m
+[1mindex 0000000..d74918b[m
+[1m--- /dev/null[m
+[1m+++ b/src/main/java/com/codewithdhruv/Task_SpringBoot/service/jwt/UserService.java[m
+[36m@@ -0,0 +1,8 @@[m
+[32m+[m[32mpackage com.codewithdhruv.Task_SpringBoot.service.jwt;[m
+[32m+[m
+[32m+[m[32mimport org.springframework.security.core.userdetails.UserDetailsService;[m
+[32m+[m
+[32m+[m[32mpublic interface UserService {[m
+[32m+[m
+[32m+[m[32m    UserDetailsService userDetailsService();[m
+[32m+[m[32m}[m
+[1mdiff --git a/src/main/java/com/codewithdhruv/Task_SpringBoot/service/jwt/UserServiceImpl.java b/src/main/
